@@ -1,0 +1,35 @@
+{
+  "name":"复方血栓通胶囊",
+  "length":92,
+  "width":62,
+  "agg_thickness":8.1,
+  "thickness":0.3,
+  "medicine_center":[
+    [0, 0],     [16.2, 0],
+    [0, 16],    [16.2, 16],
+    [0, 32],    [16.2, 32],
+    [0, 48],    [16.2, 48],
+    [0, 64],    [16.2, 64]
+  ],
+  "medicine_distribution":{
+    "regularity":1,
+    "center":{
+      "x_sum":2,
+      "x_distance":29.8,
+      "y_sum":5,
+      "y_distance":16.25
+    }
+  },
+  "ark_barrels":{
+    "x":{
+      "num_center":1,
+      "center_deviation":8
+    },
+    "y":{
+      "backboard":104.8
+    },
+    "z":{
+      "baseboard":8.55
+    }
+  }
+}

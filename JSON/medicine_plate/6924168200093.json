@@ -1,0 +1,28 @@
+{
+  "name":"黄连上清片",
+  "length":105,
+  "width":69,
+  "agg_thickness":7.7,
+  "thickness":0.3,
+  "medicine_distribution":{
+    "regularity":1,
+    "center":{
+      "x_sum":4,
+      "x_distance":16.2,
+      "y_sum":6,
+      "y_distance":16.2
+    }
+  },
+  "ark_barrels":{
+    "x":{
+      "num_center":1,
+      "center_deviation":4.5
+    },
+    "y":{
+      "backboard":104.8
+    },
+    "z":{
+      "baseboard":8.55
+    }
+  }
+}

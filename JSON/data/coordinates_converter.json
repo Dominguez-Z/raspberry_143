@@ -1,0 +1,18 @@
+{
+  "body":{
+    "cusp_center":[92,330,145.5],
+    "tablet_plate_bearing_surface":143.1,
+    "the_front_supporting_parts":305,
+    "push_rod":{
+      "center":42,
+      "the_top":149.5,
+      "the_bottom":131.5,
+      "the_front":391.5
+    },
+    "tong":{
+      "open_center":142.25,
+      "open_top":143,
+      "the_front_y":318.5
+    }
+  }
+}
