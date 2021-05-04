@@ -35,6 +35,7 @@ current_path = os.path.dirname(__file__)
 
 # do_take、strike_drug_ready
 CLIP_MM = 5                 # 夹取药片边缘的宽度
+Y_Y1_MM = 7                 # y_y1相对运动夹稳药片板的运动距离
 # ############################################################################################################
 
 
@@ -60,7 +61,6 @@ def y_y1(coordinate_now_y, coordinate_target_y,
         y轴运动最高转速设定，未指定按照默认
     rpm_max_y1
         y1轴运动最高转速设定，未指定按照默认
-    pulse_width_
     """
     # 创建y、y1轴子线程
     threads = []
@@ -221,7 +221,7 @@ def y_correct(correction, reserved_distance=0):
     return
         image_recognition_coordinate - 该柜桶影像识别边的y坐标，可作为后续y方向计算基础
     """
-    # 获取当前主体尖端的z坐标
+    # 获取当前主体尖端的y坐标
     body_cusp_center_y = coordinate_converter.body_cusp_center()[1]
     # 获取目标柜桶的y坐标
     # 目前设计每个柜桶y坐标都是一样的
@@ -265,9 +265,9 @@ def y1_correct():
     return
 
 
-def do_take(medicine_num, row, line):
+def do_take(medicine_num, row, line, num_center=0):
     """
-    该函数前提是主体已运动到目标柜桶附近，调用该函数实现拿取药板
+    调用该函数实现拿取药板
 
     Parameters
     ----------
@@ -277,15 +277,13 @@ def do_take(medicine_num, row, line):
         目前所在柜桶的行，0开始，顺轴正向增加
     line
         目前所在柜桶的列，0开始，顺轴正向增加
-    
-    Returns
-    -------
-    
-    Raises
-    ------
+    num_center
+        目标药板位于该柜桶的第几列，顺x轴正方向增加,0 or 1，默认是0
     """
     # ############################################## 常数值设定区域 ##############################################
     clip_mm = CLIP_MM     # 夹取药片边缘的宽度
+    y_y1_mm = Y_Y1_MM     # y_y1相对运动夹稳药片板的运动距离
+    sleep_time = 1        # 动作运动间隔的时间
     # ############################################################################################################
 
     # 1、获取需要的数据
@@ -294,7 +292,6 @@ def do_take(medicine_num, row, line):
     # 1.2 指定药柜的修正参数
     params_correction_xyz = params_correction.get_ark_barrels(row, line)
 
-    sleep_time = 1              # 动作运动间隔的时间
     # 2、五轴修正
     # 2.0 xz平面运动前提是y方向不会碰撞
     go.xz_move_y_safe()
@@ -308,16 +305,17 @@ def do_take(medicine_num, row, line):
 
     # 2.3 x，z轴对准参数获取
     body_cusp_center_x, ark_barrels_x_center = \
-        x_correct_coordinates(row, line, plate_info["ark_barrels"]["x"], params_correction_xyz[0], 0)
+        x_correct_coordinates(row, line, plate_info["ark_barrels"]["x"], params_correction_xyz[0], num_center)
     body_cusp_center_z, z_baseboard = \
         z_correct_coordinates(row, line, plate_info["ark_barrels"]["z"], params_correction_xyz[2])
+    z_base_2_target = z_baseboard + 15.3     # 对准换为影像识别的底边
 
     # 2.4 x轴修正对齐，夹子中心对齐柜桶中心,z轴修正对齐，尖端底部与药板支撑面平齐
     # 同时进行节约时间
     go.xz(coordinate_now_x=body_cusp_center_x,
           coordinate_target_x=ark_barrels_x_center,
           coordinate_now_z=body_cusp_center_z,
-          coordinate_target_z=z_baseboard)
+          coordinate_target_z=z_base_2_target)
     time.sleep(sleep_time)
 
     # # 2.3 x轴修正对齐，夹子中心对齐柜桶中心
@@ -328,7 +326,8 @@ def do_take(medicine_num, row, line):
     # time.sleep(sleep_time)
 
     # 2.5 y轴修正，前进到 尖端 与 影像识别边 相距 0mm
-    image_recognition_coordinate = y_correct(params_correction_xyz[1], 0)
+    # image_recognition_coordinate = y_correct(params_correction_xyz[1], 0)
+    y_correct(params_correction_xyz[1], 0)
     time.sleep(sleep_time)
 
     # 3、前提是五轴已经对准初始位置，开始取药
@@ -338,8 +337,11 @@ def do_take(medicine_num, row, line):
     z轴向上移动 (药板总厚度 + 底面面厚度)/2 ，
     便能使尖端处于两片药的中间位置
     '''
-    z_move1 = (plate_info["agg_thickness"] + plate_info["thickness"])/2
-    go.only_z(0, z_move1)
+    # 获取当前主体尖端的z坐标
+    body_cusp_center_z = coordinate_converter.body_cusp_center()[2]
+    # 最底两块药片缝隙中心 柜桶底表面 + (药板总厚度+药锡纸板厚度)/2
+    z_target0 = z_baseboard + (plate_info["agg_thickness"] + plate_info["thickness"])/2
+    go.only_z(body_cusp_center_z, z_target0)
     time.sleep(sleep_time)
 
     # Y轴运动将铁片插入最下药板和上一片药板之间，然后Z轴调整至夹具张口中心与药片板夹取位置相平的位置
@@ -353,7 +355,7 @@ def do_take(medicine_num, row, line):
     go.only_z(body_tong_open_center, z_target1)
     time.sleep(sleep_time)
 
-    # Y轴进一步插入，使得药片板位于夹片之间,大约夹取3mm
+    # Y轴进一步插入，使得药片板位于夹片之间,大约夹取clip_mm
     '''
     前提：尖端在原来与影像辨识边距离0有前进了10mm用于插入药板之间，
     夹具y方向前表面距离尖端为-11.5mm
@@ -378,7 +380,7 @@ def do_take(medicine_num, row, line):
     
     # Y轴和Y1轴慢速反向运动，把拉钩拉入药板槽，夹紧药板
     # y_y1(0, 7, 0, -7, 3360, 1100)
-    y_y1(0, 7, 0, -7, 4, 30)
+    y_y1(0, y_y1_mm, 0, -y_y1_mm, 4, 30)
     time.sleep(sleep_time)
 
     # y1轴可能还没有夹稳，增加一段使得确保夹稳
@@ -393,60 +395,180 @@ def do_take(medicine_num, row, line):
     '''
     # 获取当前主体夹具前表面坐标
     the_front_tong = coordinate_converter.body_tong("the_front_y")
+    # 药片板y方向最前沿坐标
     y1_now1 = the_front_tong + plate_info["length"] - clip_mm
     # 获取药板支撑结构前表面坐标
     y1_taeget = coordinate_converter.body("the_front_supporting_parts")
     go.only_y1(y1_now1, y1_taeget)
     time.sleep(sleep_time)
 
-    # y轴后退，保证推杆前表面在药柜影像辨识边之后约5mm，防撞
-    # 目标位置
-    y_taeget1 = image_recognition_coordinate - 5
-    # 推杆y方向最前端
-    y_now1 = coordinate_converter.body_push_rod("the_front")
-    # y1拉回与y后退同时启动
-    # y_y1(y_now1, y_taeget1, y1_now1, y1_taeget)
-    # time.sleep(sleep_time)
-    go.only_y(y_now1, y_taeget1)
+    # # y轴后退，保证推杆前表面在药柜影像辨识边之后约5mm，防撞
+    # # 目标位置
+    # y_taeget1 = image_recognition_coordinate - 5
+    # # 推杆y方向最前端
+    # y_now1 = coordinate_converter.body_push_rod("the_front")
+    # # y1拉回与y后退同时启动
+    # # y_y1(y_now1, y_taeget1, y1_now1, y1_taeget)
+    # # time.sleep(sleep_time)
+    # go.only_y(y_now1, y_taeget1)
+
+    # y轴后退，保证xz运动安全，防撞
+    go.xz_move_y_safe()
     time.sleep(sleep_time)
 
     return
 
 
-def do_back():
-    sleep_time = 1
-    # z.move(-149)
-    # time.sleep(sleep_time)
-    # 前提是X轴已经对准，z轴上升到前端二铁片位于最底药板之下，目前测量距离为  mm
-    z.move(145)
+def do_back(medicine_num, row, line):
+    """
+    调用该函数实现放回药板
+
+    Parameters
+    ----------
+    medicine_num
+        药物的编号，具有唯一性
+    row
+        目前所在柜桶的行，0开始，顺轴正向增加
+    line
+        目前所在柜桶的列，0开始，顺轴正向增加
+    """
+    # ############################################## 常数值设定区域 ##############################################
+    clip_mm = CLIP_MM           # 夹取药片边缘的宽度
+    y_y1_mm = Y_Y1_MM  # y_y1相对运动夹稳药片板的运动距离
+    sleep_time = 1              # 动作运动间隔的时间
+    # ############################################################################################################
+
+    # 1、获取需要的数据
+    # 1.1 指定药物编号的json数据
+    plate_info = get_plate_info(medicine_num)
+    # 1.2 指定药柜的修正参数
+    params_correction_xyz = params_correction.get_ark_barrels(row, line)
+
+    # 2、xz双轴对齐
+    # 2.1 参数获取
+    # x参数
+    body_cusp_center_x, ark_barrels_x_center = \
+        x_correct_coordinates(row, line, plate_info["ark_barrels"]["x"], params_correction_xyz[0], 0)
+    # z参数
+    body_cusp_center_z, z_baseboard = \
+        z_correct_coordinates(row, line, plate_info["ark_barrels"]["z"], params_correction_xyz[2])
+    z_cant_middle = body_cusp_center_z + 3            # 尖端斜面的中间高度偏下
+    # 2.2 x轴夹子中心对齐柜桶中心,z轴尖端斜面的中间高度偏下与药板支撑面平齐
+    # 同时进行节约时间
+    go.xz(coordinate_now_x=body_cusp_center_x,
+          coordinate_target_x=ark_barrels_x_center,
+          coordinate_now_z=z_cant_middle,
+          coordinate_target_z=z_baseboard)
     time.sleep(sleep_time)
-    # Y轴前进到达对准位判断位置是否正确
-    y.move(75.6)
+
+    # 3、y轴修正，前进到 尖端 与 影像识别边 相距 0mm
+    image_recognition_coordinate = y_correct(params_correction_xyz[1], 0)
+    # y_correct(params_correction_xyz[1], 0)
     time.sleep(sleep_time)
-    # Y轴运动将铁片插入最下药板之下，然后Z轴提高至药板槽与药板卡位相平的位置
-    y.move(6.5, 1000)
+
+    # 4、y轴前进10mm
+    # 斜面顶最低药板，稍微将药板前推，便于后面抬高过程不碰到尖端
+    go.only_y(0, 10)
     time.sleep(sleep_time)
-    z.move(6.1, 2000)
+
+    # 5、z轴抬高
+    # 使得药板稍高于拱起0.5mm
+    # 获取当前夹具开口顶面
+    body_tong_open_top = coordinate_converter.body_tong("open_top")
+    # 夹取药板的下表面 =  开口顶面 - 药锡纸板厚度
+    z_now1 = body_tong_open_top - plate_info["thickness"]
+    # 目标点坐标 = 柜桶底表面 + 拱起量 + 预留值0.5mm
+    hog_back_distance = ark_barrels_coordinates.get_plate_z("hog_back")
+    z_target2 = z_baseboard + hog_back_distance + 0.5
+    go.only_z(z_now1, z_target2)
     time.sleep(sleep_time)
-    # Y轴进一步插入
-    y.move(15.7, 1000)
+
+    # 6、y轴调整
+    # 使得药板推出后，夹具前表面位于夹取药片clip_mm的位置
+    # 关注点为一个虚空点，是夹药动作中，y_y1运动夹住药板时，此时夹具y方向的前表面
+    # 通过调整y轴，使得该点位于这个状态，后续控制y1轴推出药板时刚好达到正确位置、
+    # 6.1 获取当前关注点坐标
+    # 计算尖端和关注点的距离
+    the_front_tong = coordinate_converter.get("body", "tong", "the_front_y")
+    cusp_center_y = coordinate_converter.get("body", "cusp_center")[1]
+    cusp_2_focus = -(cusp_center_y - the_front_tong) - y_y1_mm
+    # 当前坐标
+    focus_now = coordinate_converter.body_cusp_center()[1] + cusp_2_focus
+    # 6.2 获取关注点的目标坐标
+    # 机械上药片板边缘比影像识别边前 6mm
+    # 夹具夹取药板边缘 clip_mm
+    # 目标坐标 = 影像识别边 + 6 + clip_mm
+    focus_target = image_recognition_coordinate + 6 + clip_mm
+    # 6.3 调用y轴控制调整位置
+    go.only_y(focus_now, focus_target)
     time.sleep(sleep_time)
-    # Y1轴持续推出，将夹紧的药板完全推入存储柜
-    y1.move(87, 1000)
+
+    # 7、y1推出药板
+    # 推到松开前的位置，例如y_y1松开距离是7mm，那么y1走到0-7 = -7mm的位置
+    # 获取当前y1的坐标
+    current_coordinates_y1 = current_coordinates.get("motor_y1")
+    # y1运动至 0 - y_y1_mm
+    go.only_y1(current_coordinates_y1, 0 - y_y1_mm)
     time.sleep(sleep_time)
-    # Y轴和Y1轴慢速反向运动，放松药板
-    y_y1(0, -5.5, 0, 5.5, 3360, 1000)
+
+    # 8、y和y1配合运动松开夹具
+    # Y轴和Y1轴慢速反向运动，松开药板
+    y_y1(0, -y_y1_mm, 0, y_y1_mm, 4, 30)
     time.sleep(sleep_time)
-    # Z下降至插入前的位置
-    z.move(-1.1, 2000)
+
+    # 9、z轴下降
+    # 使得夹具张口z方向中心与正常状态最底药板的相平
+    # 该动作能保证放回的药板已低于拱起，防止y后退时把药板带出柜桶
+    # 获取当前主体夹具开口中心
+    body_tong_open_center = coordinate_converter.body_tong("open_center")
+    # 最底药板的夹取中心 柜桶底表面 + 药锡纸板厚度/2 + 底下药板被上面影响抬起的高度1mm
+    z_target1 = z_baseboard + plate_info["thickness"] / 2 + 1
+    go.only_z(body_tong_open_center, z_target1)
     time.sleep(sleep_time)
-    # Y轴完全拉出，恢复到起始位置
-    back_l = -(79.6 + 13.5 + 4.7)
-    y.move(back_l)
+
+    # 10、y后退
+    # 完全退出到安全位置，保证xz运动安全，防撞
+    go.xz_move_y_safe()
     time.sleep(sleep_time)
-    # Z轴下降至起始位置
-    z.move(-150)
+
+    return
+
+
+def throw_away():
+    """
+    将药板扔掉
+
+    """
+    sleep_time = 1  # 动作运动间隔的时间
+
+    # 1、xz平面移动到扔药的位置
+    target_z = 231.85
+    target_x = 1205.7
+    # 获取当前主体尖端的z坐标
+    body_cusp_center_z = coordinate_converter.body_cusp_center()[2]
+    # 获取当前主体的坐标x坐标
+    body_cusp_center_x = coordinate_converter.body_cusp_center()[0]
+    go.xz(coordinate_now_x=body_cusp_center_x,
+          coordinate_target_x=target_x,
+          coordinate_now_z=body_cusp_center_z,
+          coordinate_target_z=target_z)
     time.sleep(sleep_time)
+
+    # 2、y轴退后对准，y1轴归零实现丢弃药板
+    distance_y = -30
+    go.only_y(0, distance_y)
+    # y1轴修正的作用就是归零
+    y1_correct()
+    time.sleep(sleep_time)
+
+    # 3、y轴去回安全位置、
+    go.xz_move_y_safe()
+    time.sleep(sleep_time)
+
+    # 4、x退回正常范围
+    go.only_x(0, -30)
+    time.sleep(sleep_time)
+
     return
 
 

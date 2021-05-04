@@ -17,6 +17,7 @@ import motor.x1_drive as x1
 from JSON import current_coordinates
 import JSON.coordinate_converter as coordinate_converter
 import JSON.constant_coordinates as constant_coordinates
+import JSON.ark_barrels_coordinates as ark_barrels_coordinates
 import threading
 
 # ############################ 常数值设定区域 ############################
@@ -329,11 +330,24 @@ def setup_main():
 
 # 循环部分
 def loop():
+    # # 获取当前主体夹具前表面坐标
+    # the_front_tong = coordinate_converter.body_tong("the_front_y")
+    #
+    # # 设定的是前面板外表面坐标，因此用[0, 0]柜桶的代替所有
+    # ark_barrels_y = ark_barrels_coordinates.get_plate(1, 0)[1]
+    # image_recognition_distance = ark_barrels_coordinates.get_plate_y("image_recognition")
+    # # 影像识别边坐标 = 目标柜桶y坐标 + 影像识别边距离
+    # image_recognition_coordinate = ark_barrels_y + image_recognition_distance
+    #
+    # only_y(the_front_tong, image_recognition_coordinate)
+    # time.sleep(1)
+
     while True:
-        xz(0, -700, 0, 600)
+        only_x(0, 1.5927)
         print("暂停")
         time.sleep(3)
-        xz(0, 700, 0, -600)
+
+        only_x(0, -1.5927)
         print("暂停")
         time.sleep(3)
         # only_x1(65)

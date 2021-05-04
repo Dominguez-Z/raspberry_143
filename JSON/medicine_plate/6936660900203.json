@@ -1,22 +1,22 @@
 {
-  "name":"复方血栓通胶囊",
-  "length":92,
-  "width":62,
-  "agg_thickness":8.1,
-  "thickness":0.3,
+  "name":"甲钴胺片",
+  "length":80,
+  "width":57,
+  "agg_thickness":4.3,
+  "thickness":0.4,
   "medicine_distribution":{
     "regularity":1,
     "center":{
-      "x_sum":2,
-      "x_distance":29.8,
+      "x_sum":4,
+      "x_distance":13,
       "y_sum":5,
-      "y_distance":16.25
+      "y_distance":14
     }
   },
   "ark_barrels":{
     "x":{
       "num_center":1,
-      "center_deviation":8
+      "center_deviation":10.5
     },
     "y":{
       "backboard":104.8

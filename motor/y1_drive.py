@@ -175,12 +175,12 @@ def main():
     while i < 50:
         i = i + 1
         print("Y1轴向前第 %s 次" % i)
-        move(-20)
+        move(68)
         print("暂停")
         time.sleep(3)
 
         print("Y1轴向后 %s 次" % i)
-        move(20)
+        move(-68)
         print("暂停")
         time.sleep(2)
 

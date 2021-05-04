@@ -16,7 +16,7 @@ import time
 # 主函数循环
 def main():
     # motor_reset.begin("fast")
-    # motor_reset.begin()                                   # 各轴到达传感器监测点
+    motor_reset.begin()                                   # 各轴到达传感器监测点
     # go.wait()  # 去到工作等待点
     # return
 
@@ -24,8 +24,38 @@ def main():
     # bottle.take_medicine(0, 0, 3)
     # time.sleep(1)
 
+
     # 测试取药
+    # 黄连上清片
+    # plate.do_take(6924168200093, 1, 5)
+    # 丢掉药板
+    # plate.throw_away()
+
+    # 黄连上清片
+    # plate.do_take(6924168200093, 1, 6)
+    # 丢掉药板
+    # plate.throw_away()
+
+    # 复方血栓通胶囊
     # plate.do_take(6902170000238, 2, 5)
+    # 丢掉药板
+    # plate.throw_away()
+
+    # 牛黄上清片
+    # plate.do_take(6921314097279, 1, 7)
+    # 丢掉药板
+    # plate.throw_away()
+
+    # 牛黄上清片
+    # plate.do_take(6921314097279, 2, 1)
+    # 丢掉药板
+    # plate.throw_away()
+
+    # 甲钴胺片
+    # plate.do_take(6936660900203, 3, 5)
+    # 丢掉药板
+    # plate.throw_away()
+
     # jump.ark_barrel(1, 2)
     #     time.sleep(2)
 
