@@ -5,11 +5,13 @@
 #      Author:  钟东佐
 #       Date        ||      describe
 #   2021/03/17      ||  编写从药柜中拿药的代码
+#   2021/05/04      ||  编写了放回药板的代码，增加了丢弃药板的代码。
 #########################################################
 """
 该模块主要处理对于药板的拿和放的控制。
 拿药板调用函数：do_take ；
-放回药板调用函数：do_back（还未编写） 。
+放回药板调用函数：do_back;
+丢弃药板调用函数：throw_away。
 
 """
 
@@ -283,7 +285,7 @@ def do_take(medicine_num, row, line, num_center=0):
     # ############################################## 常数值设定区域 ##############################################
     clip_mm = CLIP_MM     # 夹取药片边缘的宽度
     y_y1_mm = Y_Y1_MM     # y_y1相对运动夹稳药片板的运动距离
-    sleep_time = 1        # 动作运动间隔的时间
+    sleep_time = 0.1        # 动作运动间隔的时间
     # ############################################################################################################
 
     # 1、获取需要的数据
@@ -326,8 +328,8 @@ def do_take(medicine_num, row, line, num_center=0):
     # time.sleep(sleep_time)
 
     # 2.5 y轴修正，前进到 尖端 与 影像识别边 相距 0mm
-    # image_recognition_coordinate = y_correct(params_correction_xyz[1], 0)
-    y_correct(params_correction_xyz[1], 0)
+    image_recognition_coordinate = y_correct(params_correction_xyz[1], 0)
+    # y_correct(params_correction_xyz[1], 0)
     time.sleep(sleep_time)
 
     # 3、前提是五轴已经对准初始位置，开始取药
@@ -355,17 +357,25 @@ def do_take(medicine_num, row, line, num_center=0):
     go.only_z(body_tong_open_center, z_target1)
     time.sleep(sleep_time)
 
-    # Y轴进一步插入，使得药片板位于夹片之间,大约夹取clip_mm
-    '''
-    前提：尖端在原来与影像辨识边距离0有前进了10mm用于插入药板之间，
-    夹具y方向前表面距离尖端为-11.5mm
-    以影像辨识边为基础，此时夹具前表面为-1.5
-    机械上药片板边缘比基础前6
-    y轴运动 5.5 - (-1.5) + 3
-    '''
-    y_move2 = 6 - 0.5 + clip_mm
-    go.only_y(0, y_move2)
+    # Y轴进一步插入，使得药片板位于夹片之间
+    # 机械上药片板边缘比影像识别边前 6mm
+    # 夹具夹取药板边缘 clip_mm
+    # 获取当前主体夹具前表面坐标
+    the_front_tong_1 = coordinate_converter.body_tong("the_front_y")
+    # 目标坐标 = 影像识别边 + 6 + clip_mm
+    focus_target = image_recognition_coordinate + 6 + clip_mm
+    go.only_y(the_front_tong_1, focus_target)
     time.sleep(sleep_time)
+    # '''
+    # 前提：尖端在原来与影像辨识边距离0有前进了10mm用于插入药板之间，
+    # 夹具y方向前表面距离尖端为-11.5mm
+    # 以影像辨识边为基础，此时夹具前表面为-1.5
+    # 机械上药片板边缘比基础前6
+    # y轴运动 5.5 - (-1.5) + 3
+    # '''
+    # y_move2 = 6 - 0.5 + clip_mm
+    # go.only_y(0, y_move2)
+    # time.sleep(sleep_time)
 
     # Z轴降低使得药片刚好高于卡位0.5mm
     # 获取当前夹具开口顶面
@@ -435,7 +445,7 @@ def do_back(medicine_num, row, line):
     # ############################################## 常数值设定区域 ##############################################
     clip_mm = CLIP_MM           # 夹取药片边缘的宽度
     y_y1_mm = Y_Y1_MM  # y_y1相对运动夹稳药片板的运动距离
-    sleep_time = 1              # 动作运动间隔的时间
+    sleep_time = 0.1              # 动作运动间隔的时间
     # ############################################################################################################
 
     # 1、获取需要的数据
@@ -452,7 +462,7 @@ def do_back(medicine_num, row, line):
     # z参数
     body_cusp_center_z, z_baseboard = \
         z_correct_coordinates(row, line, plate_info["ark_barrels"]["z"], params_correction_xyz[2])
-    z_cant_middle = body_cusp_center_z + 3            # 尖端斜面的中间高度偏下
+    z_cant_middle = body_cusp_center_z + 2.5            # 尖端斜面的中间高度偏下
     # 2.2 x轴夹子中心对齐柜桶中心,z轴尖端斜面的中间高度偏下与药板支撑面平齐
     # 同时进行节约时间
     go.xz(coordinate_now_x=body_cusp_center_x,
@@ -466,9 +476,9 @@ def do_back(medicine_num, row, line):
     # y_correct(params_correction_xyz[1], 0)
     time.sleep(sleep_time)
 
-    # 4、y轴前进10mm
+    # 4、y轴前进12mm
     # 斜面顶最低药板，稍微将药板前推，便于后面抬高过程不碰到尖端
-    go.only_y(0, 10)
+    go.only_y(0, 12)
     time.sleep(sleep_time)
 
     # 5、z轴抬高
@@ -641,6 +651,18 @@ def strike_drug_ready(parts_num):
 
     # 6、至此打药前的准备完成，到达指定位置，返回函数
     return
+
+
+def strike_drug_test(parts_num):
+    """
+    调用实现打药
+
+    Parameters
+    ----------
+    parts_num
+        打药部件的编号
+
+    """
 
 
 def setup_main():
