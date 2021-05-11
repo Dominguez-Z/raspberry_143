@@ -15,8 +15,8 @@ import time
 
 # 主函数循环
 def main():
-    motor_reset.begin("fast")
-    motor_reset.begin()                                   # 各轴到达传感器监测点
+    # motor_reset.begin("fast")
+    # motor_reset.begin()                                   # 各轴到达传感器监测点
     # go.wait()  # 去到工作等待点
     # return
 
@@ -27,7 +27,7 @@ def main():
 
     # 测试取药
     # 黄连上清片
-    # plate.do_take(6924168200093, 1, 5)
+    plate.do_take(6924168200093, 1, 5)
     # plate.do_back(6924168200093, 1, 5)
     # 丢掉药板
     # plate.throw_away()
