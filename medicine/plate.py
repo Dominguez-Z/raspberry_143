@@ -582,16 +582,18 @@ def throw_away():
     return
 
 
-def strike_drug_ready(parts_num):
+def strike_drug_ready(parts_num, y_ready):
     """
     实现去到打药准备点,对于不同药物，准备工作都一样，
-    使得xy面上打药的中心位于药板支撑面的y方向最前和x方向中线，
+    使得xy面上打药的中心位于药板支撑面的y方向最前后退一段距离的位置和x方向中线，
     z高度控制在药片底面高于打药支撑面1mm处。
 
     Parameters
     ----------
     parts_num
         打药部件的编号
+    y_ready
+        药板支撑面的y方向最前超出中心的距离
 
     """
     sleep_time = 1          # 动作运动间隔的时间
@@ -639,23 +641,24 @@ def strike_drug_ready(parts_num):
     go.only_z(tablet_plate_bearing_surface, (strike_drug_parts_center_z + 1), 300)
     time.sleep(sleep_time)
 
-    # 5、y轴推出让药片最前端对准打药孔中心
+    # 5、y轴推出让药片最前端超出打药孔中心一定距离
     # 5.1 获取当前药片支撑装置的最前面y坐标，默认此为药片最前端
     the_front_supporting_parts = coordinate_converter.body("the_front_supporting_parts")
     # 5.2 获取打药孔中心的y坐标
     strike_drug_parts_center_y = strike_drug_parts_center[1]
     print(the_front_supporting_parts, strike_drug_parts_center_y)
     # 5.3 移动y轴对准位置
-    go.only_y(the_front_supporting_parts, strike_drug_parts_center_y, 200)
+    go.only_y(the_front_supporting_parts, strike_drug_parts_center_y + y_ready, 200)
     time.sleep(sleep_time)
 
     # 6、至此打药前的准备完成，到达指定位置，返回函数
     return
 
 
-def strike_drug_test(parts_num):
+def strike_drug_finish(parts_num):
     """
-    调用实现打药
+    打完药，需要退出到安全位置，避免后续操作中推杆撞到其他机械部件
+    前提：打药结束后，药板拉回至打药准备状态
 
     Parameters
     ----------
@@ -664,13 +667,114 @@ def strike_drug_test(parts_num):
 
     """
     # ############################################## 常数值设定区域 ##############################################
-    clip_mm = CLIP_MM  # 夹取药片边缘的宽度
-    y_y1_mm = Y_Y1_MM  # y_y1相对运动夹稳药片板的运动距离
-    sleep_time = 0.1  # 动作运动间隔的时间
+    sleep_time = 0.1        # 动作运动间隔的时间
+    # ############################################################################################################
+    # 1、药夹尖端退后到打药装置最后，并有余量
+    # 1.1 获取当前尖端y坐标
+    body_cusp_center = coordinate_converter.body_cusp_center()          # 一次提取xyz，后续需要直接获取
+    body_cusp_center_y = body_cusp_center[1]
+    # 1.2 获取打药装置最后的y坐标
+    the_back_strike_drug_parts = constant_coordinates.get("strike_drug_parts", str(parts_num), "the_back")
+    print(body_cusp_center_y, the_back_strike_drug_parts)
+    # 1.3 退后到相差20mm的位置
+    go.only_y(body_cusp_center_y, (the_back_strike_drug_parts - 20), 200)
+    time.sleep(sleep_time)
+
+    # 2、伸出的推杆最底部要高于打药装置最顶，并有余量
+    # 2.1 获取当前推杆最底部的z坐标
+    the_bottom_push_rod = coordinate_converter.body_push_rod("the_bottom")
+    # 2.2 获取打药装置最顶的z坐标
+    the_top_strike_drug_parts = constant_coordinates.get("strike_drug_parts", str(parts_num), "the_top")
+    print(the_bottom_push_rod, the_top_strike_drug_parts)
+    # 2.3 调整高度，余量10mm
+    go.only_z(the_bottom_push_rod, (the_top_strike_drug_parts + 10), 300)
+    time.sleep(sleep_time)
+
+    # 3、x方向移动
+    # 保证body整体x方向与打药装置不重叠
+    distance_x = 90         # 该距离能保证安全
+    go.only_x(0, distance_x, 300)
+    time.sleep(sleep_time)
+
+    return
+
+
+def strike_drug_do_test(medicine_num, parts_num, y_ready, origin_center):
+    """
+    针对药物移动控制打药。
+    注意y方向移动只运动y1轴，且认为药板边缘与支撑面边缘平齐。
+
+    Parameters
+    ----------
+    medicine_num
+        药物的编号，具有唯一性
+    parts_num
+        打药部件的编号
+    y_ready
+        药板支撑面的y方向最前超出中心的距离
+    origin_center
+        原点中心坐标，[x, y]。
+        x：左上角第一粒药x中心到药板中心的距离，为负值。
+        y：左上角第一粒药x中心到 药板边
+
+    """
+    # ############################################## 常数值设定区域 ##############################################
+    clip_mm = CLIP_MM       # 夹取药片边缘的宽度
+    y_y1_mm = Y_Y1_MM       # y_y1相对运动夹稳药片板的运动距离
+    sleep_time = 0.1        # 动作运动间隔的时间
+    # ############################################################################################################
+    # 0、初始化指针坐标
+    pointer_xy = [0, -y_ready]
+
+    # 1、去到左上角(0, 0)位的中心
+    # 1.1 x轴调整
+    go.only_x(0, origin_center[0])
+    time.sleep(sleep_time)
+
+    # 1.2 y1轴调整
+    y1_now =
+    go.only_y1(0, )
+
+    # 2、打药装置打药
+
+    # 3、y1恢复初态
+    return
+
+
+def strike_drug_test(medicine_num, parts_num, origin_center):
+    """
+    调用实现打药全流程，包含：
+    准备 -- 打药 -- 结束
+
+    Parameters
+    ----------
+    medicine_num
+        药物的编号，具有唯一性
+    parts_num
+        打药部件的编号
+    origin_center
+        原点中心坐标，[x, y]。
+        x：左上角第一粒药x中心到药板中心的距离，为负值。
+        y：左上角第一粒药x中心到 药板边
+
+    """
+    # ############################################## 常数值设定区域 ##############################################
+    clip_mm = CLIP_MM       # 夹取药片边缘的宽度
+    y_y1_mm = Y_Y1_MM       # y_y1相对运动夹稳药片板的运动距离
+    sleep_time = 0.1        # 动作运动间隔的时间
+    y_ready = 10            # 药板支撑面的y方向最前超出中心的距离
     # ############################################################################################################
     # 1、打药准备
     # 控制药板去到打药位置待定
-    strike_drug_ready(parts_num)
+    strike_drug_ready(parts_num, y_ready)
+    time.sleep(sleep_time)
+
+    # 2、执行打药
+    # 按照不同药，从文件获取药中心坐标，
+
+    # 3、完毕退出
+    # 打完药，需要退出到安全位置，避免后续操作中推杆撞到其他机械部件
+    strike_drug_finish(parts_num)
     time.sleep(sleep_time)
 
     return
