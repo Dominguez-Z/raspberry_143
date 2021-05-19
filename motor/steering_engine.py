@@ -14,42 +14,77 @@ import time
 import signal
 import atexit
 import wiringpi
+##########################################################################
+# 常数值设定区域
+SERVO_PIN = 24
+CLOSE_ANGLE = 165
+OPEN_ANGLE = 120
 
-atexit.register(GPIO.cleanup)
+##########################################################################
 
-servopin = 24
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(servopin, GPIO.OUT, initial=False)
-p = GPIO.PWM(servopin, 50)  # 50HZ
-p.start(0)
-time.sleep(2)
 
-while True:
-    for i in range(45, 106, 15):
-        a = (0.5 + i/90)/20 * 100
-        p.ChangeDutyCycle(a)  # 设置转动角度
-        print(i, a/5)
-        time.sleep(0.5)  # 等该20ms周期结束
-        p.ChangeDutyCycle(0)  # 设置转动角度
-        time.sleep(3)  # 等该20ms周期结束
-    for i in range(106, 45, -15):
-        a = (0.5 + (i - 1)/90)/20 * 100
-        p.ChangeDutyCycle(a)  # 设置转动角度
-        print(i, a/5)
-        time.sleep(0.5)  # 等该20ms周期结束
-        p.ChangeDutyCycle(0)  # 设置转动角度
-        time.sleep(3)  # 等该20ms周期结束
-    '''
-    for i in range(0, 3):
-        a = ((i + 1)*0.5 / 20)*100
-        p.ChangeDutyCycle(a)  # 设置转动角度
-        print(i, a)
-        time.sleep(0.75)  # 等该20ms周期结束
+def setup():
+    """
+    初始化设定
 
-    for i in range(0, 3):
-        b = ((3 - i) * 0.5 / 20)*100
-        p.ChangeDutyCycle(b)
-        print(i, b)
-        time.sleep(0.75)
-    '''
+    """
+    GPIO.setwarnings(False)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(SERVO_PIN, GPIO.OUT, initial=False)
+    turn_to(CLOSE_ANGLE)
 
+    return True
+
+
+def turn_to(angle):
+    """
+    转动到指定角度停下
+
+    Parameters
+    ----------
+    angle
+        目标角度，范围值 0 - 180
+
+    """
+    p = GPIO.PWM(SERVO_PIN, 50)  # 50HZ
+    # 启动pwm
+    p.start(0)
+
+    time.sleep(0.5)
+
+    a = (0.5 + angle / 90) / 20 * 100
+    p.ChangeDutyCycle(a)        # 设置转动角度
+    time.sleep(0.5)             # 等该转动到位结束
+    p.stop()
+    # p.ChangeDutyCycle(0)        # 输出置零，停止脉冲输出
+    # time.sleep(0.5)
+
+
+def main():
+    """
+    主函数
+
+    """
+    while True:
+
+        turn_to(OPEN_ANGLE)
+        time.sleep(1)
+        turn_to(CLOSE_ANGLE)
+        time.sleep(1)
+
+
+# 结束释放
+def destroy():
+    GPIO.cleanup()              # 释放控制
+
+
+# 如果该程序为主程序，程序在此开始运行，若不是不运行，该文件只做函数定义
+if __name__ == '__main__':  # Program start from here
+    setup_return = setup()
+    if setup_return:
+        print('舵机初始化成功')
+    try:
+        main()
+    except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child function destroy() will be  executed.
+        print("stop...")
+        destroy()
