@@ -15,7 +15,7 @@ import motor.x_drive as x
 import motor.z_drive as z
 import motor.y1_drive as y1
 
-STRIKE_SIGNAL = 25      # 继电器控制信号
+STRIKE_SIGNAL = 18      # 继电器控制信号
 STRIKE_TIME_NORMAL = 0.3  # 设定默认打药时间，单位是秒
 
 
@@ -68,19 +68,24 @@ def do(t=None):
         # 输出计算结果以便检测
         print("39：打药时间为指定的：%s秒" % t)
         # 打药
+        time.sleep(0.1)
         GPIO.output(STRIKE_SIGNAL, True)
         time.sleep(t)
         GPIO.output(STRIKE_SIGNAL, False)
+        time.sleep(0.1)
+        return
     # 没有指定时间，便按照默认时间进行
     else:
-        t = STRIKE_TIME_NORMAL  # 将时间设定为默认打药时间
+        t_normal = STRIKE_TIME_NORMAL  # 将时间设定为默认打药时间
         # 输出计算结果以便检测
-        print("44：打药时间为默认的：%s秒" % t)
+        print("44：打药时间为默认的：%s秒" % t_normal)
         # 打药
+        time.sleep(0.1)
         GPIO.output(STRIKE_SIGNAL, True)
-        time.sleep(t)
+        time.sleep(t_normal)
         GPIO.output(STRIKE_SIGNAL, False)
-    return
+        time.sleep(0.1)
+        return
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 

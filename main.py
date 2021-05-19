@@ -28,7 +28,7 @@ def main():
     # 测试取药
     # 黄连上清片
     plate.do_take(6924168200093, 1, 5)
-    # plate.do_back(6924168200093, 1, 5)
+    plate.do_back(6924168200093, 1, 5)
     # 丢掉药板
     # plate.throw_away()
 
@@ -43,8 +43,8 @@ def main():
     # plate.throw_away()
 
     # 牛黄上清片
-    # plate.do_take(6921314097279, 1, 7)
-    # plate.do_back(6921314097279, 1, 7)
+    plate.do_take(6921314097279, 1, 7)
+    plate.do_back(6921314097279, 1, 7)
     # 丢掉药板
     # plate.throw_away()
 
