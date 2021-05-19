@@ -23,16 +23,16 @@ import numpy as np
 
 # ############################ 常数值设定区域 ############################
 # push_out()
-TAKE_MEDICINE_ANGLE_SLIP = -40          # 设定抬高出药口滑出药物时候的角度
+TAKE_MEDICINE_ANGLE_SLIP = -50          # 设定抬高出药口滑出药物时候的角度
 TAKE_MEDICINE_TIME_SLIP = 0.7           # 设定出药延迟，使得药物有足够时间滑出至出药位
 TAKE_MEDICINE_TIME_PUSH = 0.5           # 设定顶药后的延时
 
 # push_out()、take_medicine()
-TAKE_MEDICINE_ANGLE_PUSH_OUT = -50      # 设定降低出药口将药物顶出的角度
+TAKE_MEDICINE_ANGLE_PUSH_OUT = -40      # 设定降低出药口将药物顶出的角度
 
 # take_medicine()
-COUNT_CHECK_MAX = 4                     # 设定检查出药口准备药物情况的最大次数
-BACK_MEDICINE_ANGLE = 40                # 设定回药的角度，使得药物回到瓶口附近但未回到瓶内
+COUNT_CHECK_MAX = 50                     # 设定检查出药口准备药物情况的最大次数
+BACK_MEDICINE_ANGLE = 60                # 设定回药的角度，使得药物回到瓶口附近但未回到瓶内
 # ########################################################################
 
 
@@ -132,7 +132,7 @@ def turn_y_z(angle):
     #   2.2 获取当前z轴坐标
     the_top_body_push_rod = coordinate_converter.body_push_rod("the_top")
     #   2.3 执行z轴控制
-    go.only_z(the_top_body_push_rod, target_z)
+    go.only_z(the_top_body_push_rod, target_z, 8)
     time.sleep(0.1)
 
     # 3、更新目前角度
@@ -151,7 +151,7 @@ def turn_z(angle):
     # 2、获取当前z轴坐标
     the_top_body_push_rod = coordinate_converter.body_push_rod("the_top")
     # 3、执行z轴控制
-    go.only_z(the_top_body_push_rod, target_z)
+    go.only_z(the_top_body_push_rod, target_z, 10)
     time.sleep(0.1)
     # 4、更新目前角度
     global angle_current
@@ -303,8 +303,11 @@ def take_medicine(row, line, num_push_out):
         "ready_state_error", ready_state -
         准备状态变量ready_stare非“yes”或者“no”。
     """
+    sleep_time = 1  # 动作运动间隔的时间
+
     # 0、去到对应柜桶前处于准备状态
     turn_ready(row, line)
+    time.sleep(sleep_time)
     # 1、初始化变量
     count_back_check = 0                        # 记录摇药循环次数
     count_push_out_check = 0                    # 记录出药循环次数
@@ -325,7 +328,7 @@ def take_medicine(row, line, num_push_out):
             # 判断检查次数是否超出最大值
             if count_back_check >= COUNT_CHECK_MAX:
                 # 超出次数，旋转回90度并返回（失败，已出药个数）
-                turn_to(90)
+                finish_back()
                 return "fail", num_push_out_succeed
             elif 0 <= count_back_check < COUNT_CHECK_MAX:
                 # 未超出次数，执行摇药动作
@@ -334,6 +337,7 @@ def take_medicine(row, line, num_push_out):
                 continue                                    # 下一个循环
             else:
                 print("判断检查次数count_check计算错误超出范围。")
+                finish_back()
                 return "back_check_error", count_back_check
                 
         # 3.2 如果有药准备好，进入出药循环
@@ -357,7 +361,7 @@ def take_medicine(row, line, num_push_out):
             # 判断1、成功出药数量符合指定数量
             if num_push_out_succeed == num_push_out:
                 # 回到90度并返回成功
-                turn_to(90)
+                finish_back()
                 return "succeed", num_push_out_succeed
             
             # 判断2、成功出药数量未到指定数量
@@ -366,7 +370,7 @@ def take_medicine(row, line, num_push_out):
                 # 超出次数
                 if count_push_out_check >= COUNT_CHECK_MAX:
                     # 旋转回90度并返回（失败，已出药个数）
-                    turn_to(90)
+                    finish_back()
                     return "fail", num_push_out_succeed
                 # 未超出次数，继续执行出药循环
                 elif 0 <= count_push_out_check < COUNT_CHECK_MAX:
@@ -374,22 +378,39 @@ def take_medicine(row, line, num_push_out):
                 # 
                 else:
                     print("判断检查次数count_check计算错误超出范围。")
+                    finish_back()
                     return "push_out_check_error", count_push_out_check
             
             # 判断3、成功出药数量出错
             else:
                 print("成功出药数量不在 0~指定数量 之间。")
+                finish_back()
                 return "num_push_out_succeed_error", num_push_out_succeed
 
         # 防止出错不知道
         else:
             print("准备状态变量ready_stare非“yes”或者“no”。")
+            finish_back()
             return "ready_state_error", ready_state
+
+
+def finish_back():
+    """
+    摇药过程中任何情况结束时，函数退出前调用，保证推杆离开摇药位置，
+    处于xz轴运动，y方向是安全的状态，避免碰撞
+
+    """
+    # 先转回90度的位置
+    turn_to(90)
+    # y后退到安全位置，保证xz运动安全，防撞
+    go.xz_move_y_safe()
+    time.sleep(0.1)
+    return
 
 
 def turn_ready(row, line):
     """
-    做好摇药前的准备，该函数观点点仍然是坐标，后续摇药的控制将变为关注角度
+    做好摇药前的准备，该函数关注点仍然是坐标，后续摇药的控制将变为关注角度
 
     Parameters
     ----------

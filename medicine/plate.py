@@ -29,6 +29,7 @@ import JSON.ark_barrels_coordinates as ark_barrels_coordinates
 import JSON.current_coordinates as current_coordinates
 import JSON.params_correction as params_correction
 import JSON.constant_coordinates as constant_coordinates
+import electromagnet.strike_drug_drive as strike
 import threading
 
 # ############################################## 常数值设定区域 ##############################################
@@ -605,8 +606,8 @@ def strike_drug_ready(parts_num, y_ready):
     # 1.2 获取打药装置最后的y坐标
     the_back_strike_drug_parts = constant_coordinates.get("strike_drug_parts", str(parts_num), "the_back")
     print(body_cusp_center_y, the_back_strike_drug_parts)
-    # 1.3 退后到相差20mm的位置
-    go.only_y(body_cusp_center_y, (the_back_strike_drug_parts - 20), 200)
+    # 1.3 退后到相差25mm的位置
+    go.only_y(body_cusp_center_y, (the_back_strike_drug_parts - 25), 200)
     time.sleep(sleep_time)
 
     # 2、伸出的推杆最底部要高于打药装置最顶，并有余量
@@ -615,8 +616,8 @@ def strike_drug_ready(parts_num, y_ready):
     # 2.2 获取打药装置最顶的z坐标
     the_top_strike_drug_parts = constant_coordinates.get("strike_drug_parts", str(parts_num), "the_top")
     print(the_bottom_push_rod, the_top_strike_drug_parts)
-    # 2.3 调整高度，余量10mm
-    go.only_z(the_bottom_push_rod, (the_top_strike_drug_parts + 10), 300)
+    # 2.3 调整高度，余量20mm
+    go.only_z(the_bottom_push_rod, (the_top_strike_drug_parts + 20), 300)
     time.sleep(sleep_time)
 
     # 3、移动x轴让药片中心与打药孔中心对齐
@@ -676,8 +677,8 @@ def strike_drug_finish(parts_num):
     # 1.2 获取打药装置最后的y坐标
     the_back_strike_drug_parts = constant_coordinates.get("strike_drug_parts", str(parts_num), "the_back")
     print(body_cusp_center_y, the_back_strike_drug_parts)
-    # 1.3 退后到相差20mm的位置
-    go.only_y(body_cusp_center_y, (the_back_strike_drug_parts - 20), 200)
+    # 1.3 退后到相差25mm的位置
+    go.only_y(body_cusp_center_y, (the_back_strike_drug_parts - 25), 200)
     time.sleep(sleep_time)
 
     # 2、伸出的推杆最底部要高于打药装置最顶，并有余量
@@ -686,8 +687,8 @@ def strike_drug_finish(parts_num):
     # 2.2 获取打药装置最顶的z坐标
     the_top_strike_drug_parts = constant_coordinates.get("strike_drug_parts", str(parts_num), "the_top")
     print(the_bottom_push_rod, the_top_strike_drug_parts)
-    # 2.3 调整高度，余量10mm
-    go.only_z(the_bottom_push_rod, (the_top_strike_drug_parts + 10), 300)
+    # 2.3 调整高度，余量20mm
+    go.only_z(the_bottom_push_rod, (the_top_strike_drug_parts + 20), 300)
     time.sleep(sleep_time)
 
     # 3、x方向移动
@@ -699,7 +700,7 @@ def strike_drug_finish(parts_num):
     return
 
 
-def strike_drug_do_test(medicine_num, parts_num, y_ready, origin_center):
+def strike_drug_do_test(medicine_num, y_ready, origin_center):
     """
     针对药物移动控制打药。
     注意y方向移动只运动y1轴，且认为药板边缘与支撑面边缘平齐。
@@ -708,8 +709,6 @@ def strike_drug_do_test(medicine_num, parts_num, y_ready, origin_center):
     ----------
     medicine_num
         药物的编号，具有唯一性
-    parts_num
-        打药部件的编号
     y_ready
         药板支撑面的y方向最前超出中心的距离
     origin_center
@@ -719,26 +718,60 @@ def strike_drug_do_test(medicine_num, parts_num, y_ready, origin_center):
 
     """
     # ############################################## 常数值设定区域 ##############################################
-    clip_mm = CLIP_MM       # 夹取药片边缘的宽度
-    y_y1_mm = Y_Y1_MM       # y_y1相对运动夹稳药片板的运动距离
+    # clip_mm = CLIP_MM       # 夹取药片边缘的宽度
     sleep_time = 0.1        # 动作运动间隔的时间
     # ############################################################################################################
-    # 0、初始化指针坐标
-    pointer_xy = [0, -y_ready]
+    """
+    控制实现的逻辑：
+    将固定的打药头和运动的药板在运动控制中转换，变为
+    运动的是打药头，不动的是药板，从而计算出需要移动的x，y距离，
+    该值加一个 - 号便是对应药板需要运动的 x， y1的值。
+    """
+    # 0、获取需要的数据
+    # 指定药物编号的json数据
+    plate_info = get_plate_info(medicine_num)
+    length = plate_info["length"]
+    width = plate_info["width"]
+    # 运动的范围
+    x_range = [0, width]
+    y1_range = [0, length]
 
-    # 1、去到左上角(0, 0)位的中心
-    # 1.1 x轴调整
-    go.only_x(0, origin_center[0])
-    time.sleep(sleep_time)
+    # 初始化指针坐标
+    pointer_xy = [width/2, y_ready]
 
-    # 1.2 y1轴调整
-    y1_now =
-    go.only_y1(0, )
+    # 1、去到左上角第一粒药的中心
+    # 判断指针移动的目标在药板范围内
+    if x_range[0] < origin_center[0] < x_range[1] and y1_range[0] < origin_center[1] < y1_range[1]:
+        # 1.1 x轴调整
+        x_move = -(origin_center[0] - pointer_xy[0])
+        go.only_x(0, x_move)
+        # 更新指针坐标
+        pointer_xy[0] = origin_center[0]
+        time.sleep(sleep_time)
 
-    # 2、打药装置打药
+        # 1.2 y1轴调整
+        # 由于药板的y正方向与运动控制的刚好相反，所以不需要添加负号
+        y1_move = origin_center[1] - pointer_xy[1]
+        go.only_y1(0, y1_move)
+        # 更新指针坐标
+        pointer_xy[1] = origin_center[1]
+        time.sleep(sleep_time)
 
-    # 3、y1恢复初态
-    return
+        # 2、打药装置打药
+        strike.do()
+        time.sleep(sleep_time)
+
+        # 3、y1恢复初态
+        y1_move2 = y_ready - pointer_xy[1]
+        go.only_y1(0, y1_move2)
+        time.sleep(sleep_time)
+        return True
+    # 超出药板范围
+    else:
+        print("\n")
+        print("打击点目标运动值超出药板范围，请检查。")
+        print("\n")
+        return False
 
 
 def strike_drug_test(medicine_num, parts_num, origin_center):
@@ -759,8 +792,7 @@ def strike_drug_test(medicine_num, parts_num, origin_center):
 
     """
     # ############################################## 常数值设定区域 ##############################################
-    clip_mm = CLIP_MM       # 夹取药片边缘的宽度
-    y_y1_mm = Y_Y1_MM       # y_y1相对运动夹稳药片板的运动距离
+    # clip_mm = CLIP_MM       # 夹取药片边缘的宽度
     sleep_time = 0.1        # 动作运动间隔的时间
     y_ready = 10            # 药板支撑面的y方向最前超出中心的距离
     # ############################################################################################################
@@ -771,6 +803,8 @@ def strike_drug_test(medicine_num, parts_num, origin_center):
 
     # 2、执行打药
     # 按照不同药，从文件获取药中心坐标，
+    strike_drug_do_test(medicine_num, y_ready, origin_center)
+    time.sleep(sleep_time)
 
     # 3、完毕退出
     # 打完药，需要退出到安全位置，避免后续操作中推杆撞到其他机械部件

@@ -63,10 +63,10 @@ def setup():
     # #################### 本模块初始化 ############################
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)  # Numbers GPIOs by physical location
-    # 设置为输入，因为检测下降沿，设置为上拉
-    GPIO.setup(ERROR_CHANNEL, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    # 对于硬件出错信号增加下降边沿检测,开启线程回调
-    GPIO.add_event_detect(ERROR_CHANNEL, edge=GPIO.RISING, callback=error_stop)
+    # 设置为输入，因为检测上升沿，设置为下拉
+    GPIO.setup(ERROR_CHANNEL, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    # 对于硬件出错信号增加上升边沿检测,开启线程回调
+    GPIO.add_event_detect(ERROR_CHANNEL, edge=GPIO.RISING, callback=error_stop,bouncetime=100)
 
     return True
 
