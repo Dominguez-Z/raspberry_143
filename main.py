@@ -10,6 +10,8 @@ import main_h
 import medicine.plate as plate
 import motor.reset as motor_reset
 import medicine.jump as jump
+import medicine.bottle as bottle
+import electromagnet.strike_drug_drive as strike
 import time
 
 
@@ -28,7 +30,10 @@ def main():
     # 测试取药
     # 黄连上清片
     plate.do_take(6924168200093, 1, 5)
-    plate.do_back(6924168200093, 1, 5)
+    # time.sleep(1)
+    # plate.strike_drug_test(6924168200093, 1, [11, 9.85])
+    # time.sleep(1)
+    # plate.do_back(6924168200093, 1, 5)
     # 丢掉药板
     # plate.throw_away()
 
@@ -44,6 +49,7 @@ def main():
 
     # 牛黄上清片
     plate.do_take(6921314097279, 1, 7)
+    # plate.strike_drug_test(6921314097279, 1, [9.7, 10.4])
     plate.do_back(6921314097279, 1, 7)
     # 丢掉药板
     # plate.throw_away()
@@ -62,6 +68,9 @@ def main():
     #     time.sleep(2)
 
     # 测试打药
+    # while True:
+    #     strike.do(0.3)
+    #     time.sleep(0.5)
     # plate.strike_drug_ready(1)
 
     # 走三个柜桶
