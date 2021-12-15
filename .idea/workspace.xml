@@ -1,318 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982f27f0-fef6-4d2a-ac79-c87102664adc" name="Default Changelist" comment="掉药功能创建">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JSON/data/备份/21-03-22/ark_barrels_coordinates.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JSON/data/备份/params_correction.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JSON/medicine_plate_info.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/check/diagonal_len_list.npz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/check/panel_standard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/check/predictions_model.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/electromagnet/push_drug_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/camera_0.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/diagonal_len_list.npz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/0/gray_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/0/push_out_ready_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/0/thresh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/1/gray_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/1/push_out_ready_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/1/thresh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/2.1/gray_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/2.1/push_out_ready_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/2.1/thresh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_160.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_165.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_170.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_175.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_180.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_185.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_190.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_190.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_195.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_200.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_205.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_210.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_215.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_220.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_225.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_230.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/gray_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/img_cut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_4600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_5100.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_5600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_6500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_MJPG.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_YUYV.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_auto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/push_out.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/push_out_ready_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/push_out_ready_check_focus.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/result.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/1/img_cut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/1/push_out_ready_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/1/result.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/img_cut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/push_out_ready_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/result.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_140.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_150.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_160.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_165.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_170.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_175.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_180.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_185.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_190.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_195.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_200.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_210.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/gray_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/push_out_ready_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/thresh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test_PLATE.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test_PLATE_light.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/thresh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/存根/摇药图像识别有无药/no.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/存根/摇药图像识别有无药/yes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/camera0/存根/摇药图像识别有无药3264.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/dingwei.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video0/video0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/100.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/1000.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/150.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/160.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/170.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/180.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/190.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/200.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/210.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/220.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/230.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/240.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/250.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/260.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/270.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/280.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/290.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/30.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/300.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/310.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/320.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/330.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/340.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/350.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/360.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/370.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/380.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/390.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/400.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/410.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/420.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/430.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/440.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/450.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/50.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/60.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/70.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/700.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/80.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/800.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/90.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/900.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/ark_center_offset.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/ark_center_offset_gray.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/tong_center_offset.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/tong_center_offset_1 - 副本.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/picture/video1/tong_center_offset_gray.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qr_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qr_code_y_dis_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/9999999999.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/big.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/big_enhed.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o_enhed.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o_enhed0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o_enhed1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/qrcode/编号9999999999.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/bottle_capsule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/drop.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/21-6-7/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/21-6-7/bottle-[21-6-16].py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/21-6-7/plate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/drop_211213.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/bottle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/cut_press_medicine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/cut_press_medicine_capsule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/press_medicine_capsule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/spin_medicine_bottle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/take_medicine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/take_medicine_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/lmr_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/go.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/take_medicine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/x_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/x_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/xz_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/y_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/z_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x1_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive_a.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive_a2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive_a3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/y1_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/y_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/y_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/z_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/z_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/z_drive_old.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/pulse_width_arithmetic_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/pulse_width_arithmetic_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/x1_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/x_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/y1_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/y_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/z_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-9/pulse_width_arithmetic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/总时间/pulse_width_arithmetic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/总时间/x_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/阶梯时间/pulse_width_arithmetic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/阶梯时间/x_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-2/go.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/pulse_width_arithmetic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/x_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/y1_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/y_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/z_drive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/历史文件/test_go.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/历史文件/test_take_medicine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motor/备份/历史文件/xz_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/Fixed_point_coordinates.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/new/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/new/prescription.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/new_data_format.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/test1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaodan_ni" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaodan_ni.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaogui.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaowu_md.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaowu_wz.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/zidian.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/test/LED_SWITCH.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/test/LED_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/test/Slot_photoelectric_switch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/test/calculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/test/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/test/test_steering_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/test/test_threading.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_X.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_XY.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_Y.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_onestep.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/step_Motor_switch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/test_XY_arithmetic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/test_XY_arithmetic_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/z_move/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/历史文件/z_move/step_motor_z.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/备份/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/raspberry57_step_Motor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/raspberry57_step_Motor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/ark_barrels_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/ark_barrels_coordinates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/constant_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/constant_coordinates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/coordinate_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/coordinate_converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/current_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/current_coordinates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/data/ark_barrels_coordinates.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/ark_barrels_coordinates.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/data/constant_coordinates.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/constant_coordinates.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/data/coordinates_converter.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/coordinates_converter.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/data/current_coordinates.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/current_coordinates.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/data/params_correction.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/params_correction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6902170000238.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6902170000238.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6921314097279.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6921314097279.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6924168200093.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6924168200093.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6936660900203.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6936660900203.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/README.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/README.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSON/params_correction.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/params_correction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/camera_0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/camera_1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/check/ark_barrels.py" beforeDir="false" afterPath="$PROJECT_DIR$/check/ark_barrels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electromagnet/strike_drug_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/electromagnet/strike_drug_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/led/led_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/led/led_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/bottle.py" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/bottle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/plate.py" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/plate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/go.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/go.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/pulse_width_arithmetic.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/pulse_width_arithmetic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/reset.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/reset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/steering_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/steering_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/x1_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/x1_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/x_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/x_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/y1_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/y1_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/y_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/y_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor/z_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/z_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/take_picture.py" beforeDir="false" afterPath="$PROJECT_DIR$/take_picture.py" afterDir="false" />
-    </list>
+    <list default="true" id="982f27f0-fef6-4d2a-ac79-c87102664adc" name="Default Changelist" comment="掉药功能创建" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -416,21 +105,9 @@
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/image/camera_0.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="250">
-                    <caret line="183" column="44" lean-forward="true" selection-start-line="183" selection-start-column="44" selection-end-line="183" selection-end-column="44" />
-                    <folding>
-                      <element signature="e#261#270#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/take_picture.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="2184">
+                  <state relative-caret-position="636">
                     <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
                     <folding>
                       <element signature="e#266#320#0" expanded="true" />
@@ -444,18 +121,6 @@
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="1092">
                     <caret line="41" column="10" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="10" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/image/test.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1456">
-                    <caret line="56" selection-start-line="56" selection-end-line="56" />
-                    <folding>
-                      <element signature="e#0#13#0" expanded="true" />
-                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -484,7 +149,7 @@
               <entry file="file://$PROJECT_DIR$/JSON/data/constant_coordinates.json">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="28">
-                    <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+                    <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
                   </state>
                 </provider>
               </entry>
@@ -501,8 +166,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/JSON/data/coordinates_converter.json">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="980">
-                    <caret line="35" column="12" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="12" />
+                  <state relative-caret-position="448">
+                    <caret line="46" column="3" selection-start-line="46" selection-start-column="3" selection-end-line="46" selection-end-column="3" />
                   </state>
                 </provider>
               </entry>
@@ -511,7 +176,7 @@
               <entry file="file://$PROJECT_DIR$/JSON/data/current_coordinates.json">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="196">
-                    <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+                    <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
                   </state>
                 </provider>
               </entry>
@@ -520,7 +185,7 @@
               <entry file="file://$PROJECT_DIR$/JSON/data/params_correction.json">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="307">
-                    <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+                    <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
                   </state>
                 </provider>
               </entry>
@@ -683,11 +348,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+            <state relative-caret-position="-288">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="n#!!doc" />
-                <element signature="e#273#286#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -696,8 +360,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_h.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="801">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
             </state>
           </provider>
         </entry>
@@ -717,98 +381,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/medicine/plate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12496">
+            <state relative-caret-position="25544">
               <caret line="923" column="4" selection-start-line="923" selection-start-column="4" selection-end-line="923" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" />
-                <element signature="e#363#463#1" />
-                <element signature="e#1005#1108#0" />
-                <element signature="e#1535#2513#0" />
-                <element signature="e#1535#1972#1" />
-                <element signature="e#2306#2341#0" />
-                <element signature="e#2406#2473#0" />
-                <element signature="e#2555#3293#0" />
-                <element signature="e#2555#2779#1" />
-                <element signature="e#2784#2804#0" />
-                <element signature="e#2825#2926#1" />
-                <element signature="e#3036#3044#0" />
-                <element signature="e#3382#4761#0" />
-                <element signature="e#3382#3870#1" />
-                <element signature="e#4169#4515#0" />
-                <element signature="e#4421#4429#0" />
-                <element signature="e#4534#4709#0" />
-                <element signature="e#4837#5698#0" />
-                <element signature="e#4837#5269#1" />
-                <element signature="e#5561#5569#0" />
-                <element signature="e#5753#6755#0" />
-                <element signature="e#5753#6021#1" />
-                <element signature="e#6113#6125#0" />
-                <element signature="e#6785#6955#0" />
-                <element signature="e#6785#6875#1" />
-                <element signature="e#6980#7200#0" />
-                <element signature="e#6980#7016#1" />
-                <element signature="e#7259#7485#1" />
-                <element signature="e#7723#7833#0" />
-                <element signature="e#8091#8099#0" />
-                <element signature="e#8702#8745#0" />
-                <element signature="e#8986#9011#0" />
-                <element signature="e#9478#9500#0" />
-                <element signature="e#9542#9634#1" />
-                <element signature="e#10336#10357#0" />
-                <element signature="e#10668#10673#0" />
-                <element signature="e#11354#11382#0" />
-                <element signature="e#12041#12074#0" />
-                <element signature="e#13522#13690#1" />
-                <element signature="e#13937#14047#0" />
-                <element signature="e#14695#14735#0" />
-                <element signature="e#15149#15161#0" />
-                <element signature="e#15251#15259#0" />
-                <element signature="e#15684#15692#0" />
-                <element signature="e#16160#16176#0" />
-                <element signature="e#16413#16423#0" />
-                <element signature="e#16663#16679#0" />
-                <element signature="e#16777#16785#0" />
-                <element signature="e#17141#17149#0" />
-                <element signature="e#17265#18049#0" />
-                <element signature="e#17265#17287#1" />
-                <element signature="e#18099#18313#1" />
-                <element signature="e#18361#18383#0" />
-                <element signature="e#18852#18878#0" />
-                <element signature="e#19287#19308#0" />
-                <element signature="e#19386#19400#0" />
-                <element signature="e#19759#19786#0" />
-                <element signature="e#20188#20213#0" />
-                <element signature="e#20770#22240#0" />
-                <element signature="e#20770#20904#1" />
-                <element signature="e#21057#21167#0" />
-                <element signature="e#21663#21689#0" />
-                <element signature="e#22098#22107#0" />
-                <element signature="e#22324#22700#1" />
-                <element signature="e#22705#22808#0" />
-                <element signature="e#23010#23133#1" />
-                <element signature="e#23138#23149#0" />
-                <element signature="e#23221#23243#0" />
-                <element signature="e#23670#24764#0" />
-                <element signature="e#23670#23678#0" />
-                <element signature="e#23760#23860#0" />
-                <element signature="e#23895#23994#0" />
-                <element signature="e#24413#24764#0" />
-                <element signature="e#24456#24764#0" />
-                <element signature="e#24544#24669#0" />
-                <element signature="e#24720#24764#0" />
-                <element signature="e#24920#25180#0" />
-                <element signature="e#24990#25097#0" />
-                <element signature="e#25140#25180#0" />
-                <element signature="e#26694#27047#1" />
-                <element signature="e#27052#27155#0" />
-                <element signature="e#27291#27401#0" />
-                <element signature="e#27793#28264#0" />
-                <element signature="e#27793#27820#1" />
                 <element signature="e#28588#28676#0" />
                 <element signature="e#28775#28987#0" />
                 <element signature="e#28950#28987#0" />
-                <marker date="1639037519395" expanded="true" signature="12528:14854" ph="..." />
-                <marker date="1639037519395" expanded="true" signature="29920:29925" ph="..." />
               </folding>
             </state>
           </provider>
@@ -819,18 +398,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1">
               <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/medicine/drop.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-              <folding>
-                <element signature="e#321#332#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -848,20 +415,10 @@
         <entry file="file://$PROJECT_DIR$/motor/steering_engine.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="162" column="14" lean-forward="true" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
+              <caret line="172" selection-start-line="172" selection-end-line="172" />
               <folding>
                 <element signature="e#307#330#0" expanded="true" />
-                <marker date="1639381181817" expanded="true" signature="673:2846" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPIO/define.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
             </state>
           </provider>
         </entry>
@@ -969,8 +526,8 @@
     </favorite-branches>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/image/camera.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Desktop/imdiff1v2(1).py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/image/camera.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -1129,28 +686,6 @@
             <path>
               <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
               <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
-              <item name="GPIO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
-              <item name="JSON" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
-              <item name="JSON" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
-              <item name="JSON" type="462c0819:PsiDirectoryNode" />
-              <item name="medicine_plate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
               <item name="led" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1162,12 +697,6 @@
               <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
               <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
               <item name="motor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
-              <item name="motor" type="462c0819:PsiDirectoryNode" />
-              <item name="备份" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1196,19 +725,19 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份\历史文件" />
-      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份" />
-      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\历史文件" />
-      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON\data" />
-      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\medicine\备份" />
       <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor" />
       <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份" />
       <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON" />
       <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\check" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份\历史文件" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\历史文件" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON\data" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1460,7 +989,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="830" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4942748" weight="0.21581769" />
       <window_info id="Structure" order="1" sideWeight="0.5057252" side_tool="true" weight="0.22453083" />
@@ -2096,10 +1625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11872">
           <caret line="443" selection-start-line="443" selection-end-line="443" />
-          <folding>
-            <marker date="1634120619551" expanded="true" signature="7318:8406" ph="..." />
-            <marker date="1634120619551" expanded="true" signature="8806:8812" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2124,10 +1649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="314" column="4" selection-start-line="314" selection-start-column="4" selection-end-line="314" selection-end-column="4" />
-          <folding>
-            <marker date="1634008163599" expanded="true" signature="1722:9516" ph="..." />
-            <marker date="1634008163599" expanded="true" signature="9598:11678" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2153,9 +1674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4312">
           <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
-          <folding>
-            <marker date="1634969394573" expanded="true" signature="12076:12079" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2171,7 +1689,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/take_picture.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
+        <state relative-caret-position="636">
           <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
           <folding>
             <element signature="e#266#320#0" expanded="true" />
@@ -2190,16 +1708,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1456">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JSON/data/constant_coordinates.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -2212,8 +1727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JSON/data/coordinates_converter.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="12" />
+        <state relative-caret-position="448">
+          <caret line="46" column="3" selection-start-line="46" selection-start-column="3" selection-end-line="46" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -2254,9 +1769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#282#305#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2281,9 +1793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2636">
           <caret line="122" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="e#278#318#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2382,13 +1891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/motor/steering_engine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/-1969707174/1992186930/motor/go.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="789">
@@ -2406,10 +1908,9 @@
     <entry file="file://$PROJECT_DIR$/motor/steering_engine.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="162" column="14" lean-forward="true" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
           <folding>
             <element signature="e#307#330#0" expanded="true" />
-            <marker date="1639381181817" expanded="true" signature="673:2846" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2436,98 +1937,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/medicine/plate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12496">
+        <state relative-caret-position="25544">
           <caret line="923" column="4" selection-start-line="923" selection-start-column="4" selection-end-line="923" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" />
-            <element signature="e#363#463#1" />
-            <element signature="e#1005#1108#0" />
-            <element signature="e#1535#2513#0" />
-            <element signature="e#1535#1972#1" />
-            <element signature="e#2306#2341#0" />
-            <element signature="e#2406#2473#0" />
-            <element signature="e#2555#3293#0" />
-            <element signature="e#2555#2779#1" />
-            <element signature="e#2784#2804#0" />
-            <element signature="e#2825#2926#1" />
-            <element signature="e#3036#3044#0" />
-            <element signature="e#3382#4761#0" />
-            <element signature="e#3382#3870#1" />
-            <element signature="e#4169#4515#0" />
-            <element signature="e#4421#4429#0" />
-            <element signature="e#4534#4709#0" />
-            <element signature="e#4837#5698#0" />
-            <element signature="e#4837#5269#1" />
-            <element signature="e#5561#5569#0" />
-            <element signature="e#5753#6755#0" />
-            <element signature="e#5753#6021#1" />
-            <element signature="e#6113#6125#0" />
-            <element signature="e#6785#6955#0" />
-            <element signature="e#6785#6875#1" />
-            <element signature="e#6980#7200#0" />
-            <element signature="e#6980#7016#1" />
-            <element signature="e#7259#7485#1" />
-            <element signature="e#7723#7833#0" />
-            <element signature="e#8091#8099#0" />
-            <element signature="e#8702#8745#0" />
-            <element signature="e#8986#9011#0" />
-            <element signature="e#9478#9500#0" />
-            <element signature="e#9542#9634#1" />
-            <element signature="e#10336#10357#0" />
-            <element signature="e#10668#10673#0" />
-            <element signature="e#11354#11382#0" />
-            <element signature="e#12041#12074#0" />
-            <element signature="e#13522#13690#1" />
-            <element signature="e#13937#14047#0" />
-            <element signature="e#14695#14735#0" />
-            <element signature="e#15149#15161#0" />
-            <element signature="e#15251#15259#0" />
-            <element signature="e#15684#15692#0" />
-            <element signature="e#16160#16176#0" />
-            <element signature="e#16413#16423#0" />
-            <element signature="e#16663#16679#0" />
-            <element signature="e#16777#16785#0" />
-            <element signature="e#17141#17149#0" />
-            <element signature="e#17265#18049#0" />
-            <element signature="e#17265#17287#1" />
-            <element signature="e#18099#18313#1" />
-            <element signature="e#18361#18383#0" />
-            <element signature="e#18852#18878#0" />
-            <element signature="e#19287#19308#0" />
-            <element signature="e#19386#19400#0" />
-            <element signature="e#19759#19786#0" />
-            <element signature="e#20188#20213#0" />
-            <element signature="e#20770#22240#0" />
-            <element signature="e#20770#20904#1" />
-            <element signature="e#21057#21167#0" />
-            <element signature="e#21663#21689#0" />
-            <element signature="e#22098#22107#0" />
-            <element signature="e#22324#22700#1" />
-            <element signature="e#22705#22808#0" />
-            <element signature="e#23010#23133#1" />
-            <element signature="e#23138#23149#0" />
-            <element signature="e#23221#23243#0" />
-            <element signature="e#23670#24764#0" />
-            <element signature="e#23670#23678#0" />
-            <element signature="e#23760#23860#0" />
-            <element signature="e#23895#23994#0" />
-            <element signature="e#24413#24764#0" />
-            <element signature="e#24456#24764#0" />
-            <element signature="e#24544#24669#0" />
-            <element signature="e#24720#24764#0" />
-            <element signature="e#24920#25180#0" />
-            <element signature="e#24990#25097#0" />
-            <element signature="e#25140#25180#0" />
-            <element signature="e#26694#27047#1" />
-            <element signature="e#27052#27155#0" />
-            <element signature="e#27291#27401#0" />
-            <element signature="e#27793#28264#0" />
-            <element signature="e#27793#27820#1" />
             <element signature="e#28588#28676#0" />
             <element signature="e#28775#28987#0" />
             <element signature="e#28950#28987#0" />
-            <marker date="1639037519395" expanded="true" signature="12528:14854" ph="..." />
-            <marker date="1639037519395" expanded="true" signature="29920:29925" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2544,32 +1960,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_h.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="801">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JSON/data/params_correction.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JSON/data/current_coordinates.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        <state relative-caret-position="-288">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="n#!!doc" />
-            <element signature="e#273#286#0" expanded="true" />
           </folding>
         </state>
       </provider>
