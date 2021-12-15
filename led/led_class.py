@@ -10,6 +10,7 @@ import time
 from rpi_ws281x import PixelStrip, Color
 from multiprocessing import Process
 import threading
+import GPIO.define as gpio_define
 # ############################ 常数值设定区域 ############################
 
 # ########################################################################
@@ -27,7 +28,7 @@ class Led(object):
     def __init__(self):
         # LED 配置:
         LED_COUNT = 120              # 要控制LED的数量.
-        LED_PIN = 18                # GPIO接口 需要带有PWM功能的 40-pin models: pins 12, 32, 33, 35
+        LED_PIN = gpio_define.LED_WS2812    # GPIO接口 需要带有PWM功能的 40-pin models: pins 12, 32, 33, 35，BCM：18，12，13，19
         # LED_PIN = 10              # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0).
         LED_BRIGHTNESS = 150        # 设置LED亮度 (0-255)
         # 以下LED配置无需修改

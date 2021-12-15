@@ -14,10 +14,13 @@ import motor.y_drive as y
 import motor.x_drive as x
 import motor.z_drive as z
 import motor.y1_drive as y1
+import GPIO.define as gpio_define
 
-STRIKE_SIGNAL = 18      # 继电器控制信号
-STRIKE_TIME_NORMAL = 0.3  # 设定默认打药时间，单位是秒
-
+STRIKE_SIGNAL = gpio_define.BM_HIT          # 继电器控制信号
+STRIKE_TIME_NORMAL = 0.3    # 设定默认打药时间，单位是秒
+# 硬件低电平有效
+ENABLED = False
+DISABLE = True
 
 def setup():
     """
@@ -28,7 +31,7 @@ def setup():
     GPIO.setmode(GPIO.BCM)        # Numbers GPIOs by physical location
     # print('setup x1_drive is board')
     GPIO.setup(STRIKE_SIGNAL, GPIO.OUT)     # Set pin's mode is output
-    GPIO.output(STRIKE_SIGNAL, False)       # 击打信号默认为低电平，未击打
+    GPIO.output(STRIKE_SIGNAL, DISABLE)       # 输出未使能，意为不击打
 
     return True
 
@@ -69,9 +72,9 @@ def do(t=None):
         print("39：打药时间为指定的：%s秒" % t)
         # 打药
         time.sleep(0.1)
-        GPIO.output(STRIKE_SIGNAL, True)
+        GPIO.output(STRIKE_SIGNAL, ENABLED)
         time.sleep(t)
-        GPIO.output(STRIKE_SIGNAL, False)
+        GPIO.output(STRIKE_SIGNAL, DISABLE)
         time.sleep(0.1)
         return
     # 没有指定时间，便按照默认时间进行
@@ -81,9 +84,9 @@ def do(t=None):
         print("44：打药时间为默认的：%s秒" % t_normal)
         # 打药
         time.sleep(0.1)
-        GPIO.output(STRIKE_SIGNAL, True)
+        GPIO.output(STRIKE_SIGNAL, ENABLED)
         time.sleep(t_normal)
-        GPIO.output(STRIKE_SIGNAL, False)
+        GPIO.output(STRIKE_SIGNAL, DISABLE)
         time.sleep(0.1)
         return
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -98,12 +101,12 @@ def main():
     print("开始测试打药")
     i = 0
     time.sleep(2)
-    while i < 50:
+    while i < 3:
         # go.only_y1(26 + 14.385 * i, 1000)
         # time.sleep(2)
         print(i)
         i = i + 1
-        do()
+        do(0.3)
         time.sleep(2)
 
 

@@ -9,6 +9,7 @@
 import json
 import os
 import collections
+import numpy as np
 # ############################ 常数值设定区域 ############################
 current_path = os.path.dirname(__file__)        # 获取本文件的路径
 ark_barrels_file_path = current_path + "/data/ark_barrels_coordinates.json"     # 加上目标文件的相对路径
@@ -49,13 +50,25 @@ def get_bottle(row, line):
         "y" : 转动装置y方向最小坐标，既推杆刚好接触传动装置
         "z" : 转动装置呈水平状态时，与推杆上表面的接触面坐标
     """
-    f = open(ark_barrels_file_path)                             # 打开位置坐标文件
-    ark_barrels_coordinates_all = json.load(f)                              # 加载文件中所用内容
-    f.close()                                                   # 关闭文件
-    key = str(str(row) + "-" + str(line))  # 整合出键值
-    ark_barrel_xyz = ark_barrels_coordinates_all["bottle"][key]       # 根据指定的键值key获取数值value
-    # print("成功获取坐标%s" % current_coordinates_xyz)           # 打印获取的数值
-    return ark_barrel_xyz                                           # 返回获取的数值
+    # =========== 旧的获取方式 ===========
+    # f = open(ark_barrels_file_path)                             # 打开位置坐标文件
+    # ark_barrels_coordinates_all = json.load(f)                              # 加载文件中所用内容
+    # f.close()                                                   # 关闭文件
+    # key = str(str(row) + "-" + str(line))  # 整合出键值
+    # ark_barrel_xyz = ark_barrels_coordinates_all["bottle"][key]       # 根据指定的键值key获取数值value
+    # # print("成功获取坐标%s" % current_coordinates_xyz)           # 打印获取的数值
+
+    # 获取指定柜桶的柜桶数据
+    ark_barrel_xyz = get(row, line)
+
+    # 获取摇药装置的偏移数据
+    f = open(ark_barrels_file_path)                                     # 打开位置坐标文件
+    ark_barrels_coordinates_all = json.load(f)                          # 加载文件中所用内容
+    f.close()
+    bottle_offset_xyz = ark_barrels_coordinates_all["bottle"]["offset"]
+    bottle_xyz = np.array(ark_barrel_xyz) + np.array(bottle_offset_xyz)
+
+    return bottle_xyz                                                   # 返回获取的数值
 
 
 def get_plate(row, line):
@@ -87,7 +100,7 @@ def get_plate(row, line):
     return ark_barrel_xyz                                           # 返回获取的数值
 
 
-def get_plate_y(key):
+def get_plate_y(key=None):
     """
     获取和柜桶y方向的数据，该数据对于所有柜桶是统一的：
 
@@ -106,20 +119,25 @@ def get_plate_y(key):
     f = open(ark_barrels_file_path)             # 打开位置坐标文件
     ark_barrels_coordinates_all = json.load(f)  # 加载文件中所用内容
     f.close()                                   # 关闭文件
-    key_value = ark_barrels_coordinates_all["plate"]["y"][key]          # 根据指定的键值key获取数值value
+    if key:
+        key_value = ark_barrels_coordinates_all["plate"]["y"][key]          # 根据指定的键值key获取数值value
+    else:
+        # 没有指定将"y"包含的全部一起返回
+        key_value = ark_barrels_coordinates_all["plate"]["y"]
     # print("成功获取坐标%s" % current_coordinates_xyz)           # 打印获取的数值
     return key_value
 
 
-def get_plate_z(key):
+def get_plate_z(key=None):
     """
     获取和柜桶z方向的数据，该数据对于所有柜桶是统一的：
 
     Parameters
     ----------
     key
-        json文件中["plate"]y标签下的数据：
-        "hog_back"：药片存放前端防止药片掉出的拱起 相对于 药片板支撑面的 高度，不包含正负
+        json文件中["plate"]z标签下的数据：
+        "hog_back"：药片存放前端防止药片掉出的拱起 相对于 药片板支撑面的 高度，恒为正
+        "baseboard"：药片板支撑面的 相对于 前面板柜桶镂空处支撑柜桶的接触面 的高度，恒为正
 
     Returns
     -------
@@ -130,7 +148,108 @@ def get_plate_z(key):
     f = open(ark_barrels_file_path)             # 打开位置坐标文件
     ark_barrels_coordinates_all = json.load(f)  # 加载文件中所用内容
     f.close()                                   # 关闭文件
-    key_value = ark_barrels_coordinates_all["plate"]["z"][key]          # 根据指定的键值key获取数值value
+    if key:
+        key_value = ark_barrels_coordinates_all["plate"]["z"][key]          # 根据指定的键值key获取数值value
+    else:
+        # 没有指定将"z"包含的全部一起返回
+        key_value = ark_barrels_coordinates_all["plate"]["z"]
+    # print("成功获取坐标%s" % current_coordinates_xyz)           # 打印获取的数值
+    return key_value
+
+
+def get(row, line):
+    """
+    获取指定柜桶的坐标数据[x, y, z],
+
+    Parameters
+    ----------
+    row
+        柜桶所在的行，0开始
+    line
+        柜桶所在的列，0开始
+        例如：4行5列，key = "3-4"
+
+    Returns
+    -------
+    return
+        ark_barrel_xyz - [x, y, z]
+        "x" : 柜桶x轴方向上的中心线坐标
+        "y" : 所有柜桶前面板外表面的坐标
+        "z" : 前面板柜桶镂空处支撑柜桶的接触面的坐标
+    """
+    f = open(ark_barrels_file_path)             # 打开位置坐标文件
+    all_info = json.load(f)                     # 加载文件中所用内容
+    f.close()                                   # 关闭文件
+    origin_xyz = all_info["arks"]["0-0"]        # 0-0柜桶的坐标值
+    x_distance = all_info["arks"]["x_distance"]     # 相邻列的位置差
+    z_distance = all_info["arks"]["z_distance"]     # 相邻行的高度差
+    # 计算指定柜桶的坐标数据，计算结果保留两位
+    ark_barrel_xyz = []
+    specify_x = round(origin_xyz[0] + x_distance * line, 2)   # 列
+    specify_z = round(origin_xyz[2] + z_distance * row , 2)   # 行
+    # 依次添加进数列,
+    ark_barrel_xyz.append(specify_x)
+    ark_barrel_xyz.append(origin_xyz[1])
+    ark_barrel_xyz.append(specify_z)
+
+    # print("成功获取坐标%s" % ark_barrel_xyz)           # 打印获取的数值
+    return ark_barrel_xyz                                           # 返回获取的数值
+
+
+def get_y(key=None):
+    """
+    获取和柜桶y方向的数据，该数据对于所有柜桶是统一的：
+
+    Parameters
+    ----------
+    key
+        json文件中["arks"]y标签下的数据：
+        "image_recognition"：柜桶影像识别的两条竖线到前面板外表面的位移，含正负
+
+    Returns
+    -------
+    return
+        key_value - 指定键的值
+
+    """
+    f = open(ark_barrels_file_path)             # 打开位置坐标文件
+    ark_barrels_coordinates_all = json.load(f)  # 加载文件中所用内容
+    f.close()                                   # 关闭文件
+    if key:
+        key_value = ark_barrels_coordinates_all["arks"]["y"][key]          # 根据指定的键值key获取数值value
+    else:
+        # 没有指定将"y"包含的全部一起返回
+        key_value = ark_barrels_coordinates_all["arks"]["y"]
+    # print("成功获取坐标%s" % current_coordinates_xyz)           # 打印获取的数值
+    return key_value
+
+
+def get_z(key=None):
+    """
+    获取和柜桶z方向的数据，该数据对于所有柜桶是统一的：
+
+    Parameters
+    ----------
+    key
+        json文件中["arks"]z标签下的数据：
+        "hog_back"：药片存放前端防止药片掉出的拱起 相对于 药片板支撑面的 高度，恒为正
+        "baseboard"：药片板支撑面的 相对于 前面板柜桶镂空处支撑柜桶的接触面 的高度，恒为正
+        "qr_code"：标准柜桶二维码z中线 相对于 前面板柜桶镂空处支撑柜桶的接触面 高度，恒为正
+
+    Returns
+    -------
+    return
+        key_value - 指定键的值
+
+    """
+    f = open(ark_barrels_file_path)             # 打开位置坐标文件
+    ark_barrels_coordinates_all = json.load(f)  # 加载文件中所用内容
+    f.close()                                   # 关闭文件
+    if key:
+        key_value = ark_barrels_coordinates_all["arks"]["z"][key]          # 根据指定的键值key获取数值value
+    else:
+        # 没有指定将"z"包含的全部一起返回
+        key_value = ark_barrels_coordinates_all["arks"]["z"]
     # print("成功获取坐标%s" % current_coordinates_xyz)           # 打印获取的数值
     return key_value
 
@@ -142,8 +261,9 @@ def setup():
 
 # 循环部分
 def loop():
-    ark_barrels = get_all()
-    print(ark_barrels)
+    print(get(0, 7))
+    print(get_bottle(0, 7))
+    print([1, 2, 4])
 
 
 # 结束释放

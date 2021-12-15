@@ -20,11 +20,12 @@ import time
 import math
 import matplotlib.pyplot as plt
 import motor.pulse_width_arithmetic as pul_wid_ari
+import GPIO.define as gpio_define
 
 ##########################################################################
 # 常数值设定区域
-Y_PUL = 8           # Y轴脉冲控制信号，8
-Y_DIR = 7           # Y轴方向控制信号，False是向前，True是向后，7
+Y_PUL = gpio_define.MOTOR_Y_PUL           # Y轴脉冲控制信号，8
+Y_DIR = gpio_define.MOTOR_Y_DIR           # Y轴方向控制信号，False是向前，True是向后，7
 # 用于控制运动方向
 Y_BACK = True
 Y_FRONT = False

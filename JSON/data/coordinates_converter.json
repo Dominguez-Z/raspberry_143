@@ -1,18 +1,48 @@
 {
+
+  "?body":"运动主体中的关键点相对于对应轴的坐标增量",
   "body":{
+    "?cusp_center":"主体顶药板两尖端中心的空间坐标[x, y, z]",
+    "?cusp_center_x":"两个夹具的中心线坐标",
+    "?cusp_center_y":"顶起药片板尖端的最前端",
+    "?cusp_center_z":"顶起药片板尖端的下表面",
     "cusp_center":[92,330,145.5],
+
     "tablet_plate_bearing_surface":143.1,
     "the_front_supporting_parts":305,
+
+    "?push_rod":"推杆相关的关注点",
     "push_rod":{
+      "?center":"推杆x方向的中心线",
       "center":42,
+      "?the_top":"推杆弯钩z方向上表面",
       "the_top":149.5,
+      "?the_bottom":"推杆直杆z方向下表面",
       "the_bottom":131.5,
+      "?the_front":"推杆y方向前表面",
       "the_front":392
     },
+
+    "?tong":"夹具上相关的关注点",
     "tong":{
+      "?open_center":"夹具张开最大时，z方向的中心，用于夹药时药片板进入",
       "open_center":142.25,
+      "?open_top":"夹具张开口z方向的顶部，用于定位药板拉出时候的高度",
       "open_top":143,
+      "?the_front_y":"夹具y方向最前端，用于控制夹取药板边缘的厚度",
       "the_front_y":318.5
-    }
+    },
+
+    "?camera":"运动主体上的镜头坐标数据",
+    "camera":{
+      "?2":"2号镜头，正对着前面板，镜头孔的空间坐标[x, y, z]",
+      "2":[92, 236.6, 171.65]
+    },
+
+    "?drop_channel":"药物掉落通道口的空间坐标[x, y, z]",
+    "?drop_channel_x":"出药口的中心线坐标",
+    "?drop_channel_y":"出药斜台y方向前边沿",
+    "?drop_channel_z":"出药斜台往下斜约30度时，前边沿的z高度",
+    "drop_channel":[101.5, 132.5, -97.12]
   }
 }

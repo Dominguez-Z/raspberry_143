@@ -2,27 +2,33 @@
   "name":"药的名字",
   "length":"药板长度",
   "width":"药板宽度",
-  "agg_thickness":7.2,
-  "thickness":0.35,
+  "agg_thickness":"药板的总厚度",
+  "thickness":"药板底板的厚度",
+  "num":"一板药的总数量",
+
+  "?medicine_distribution":"药片在药板中的分布信息",
   "medicine_distribution":{
-    "regularity":1,
+    "regularity":"是否整齐，是为1，否为0。整齐指的是药片的分布是规则矩阵",
     "center":{
-      "x_sum":4,
-      "x_distance":15.1,
-      "y_sum":6,
-      "y_distance":15.2
+      "narrow_side":"被夹住的是宽边，左上角位于窄边第一粒药在药板上的坐标[x，y]",
+      "broad_side":"被夹住的是窄边，左上角位于宽边第一粒药在药板上的坐标[x，y]",
+      "x_sum":"x方向也就是列的总数",
+      "x_distance":"x方向每片药之间的距离",
+      "y_sum":"y方向也就是行的总数",
+      "y_distance":"y方向每片药之间的距离"
     }
   },
+  "?ark_barrels":"与柜桶机械结构有关的一些基准点坐标或数据",
   "ark_barrels":{
     "x":{
-      "num_center":"药柜中心数，有些窄的药可以是2。",
-      "center_deviation":"目前计算方法：39 - (width / 2)"
+      "num_center":"药柜中药片板的中心数，有些窄的药可以是2。",
+      "center_deviation":"时间药板存放x方向中心相对于柜桶中心的偏移量，目前计算方法：39 - (width / 2)"
     },
     "y":{
-      "backboard":104.8
+      "backboard":"y方向限制药片板位置的钣金相对于前面板的坐标"
     },
     "z":{
-      "baseboard":7.85
+      "baseboard":
     }
   }
 }

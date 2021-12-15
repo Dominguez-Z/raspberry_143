@@ -59,9 +59,6 @@ def get_ark_barrels(row, line):
     return correction_xyz
 
 
-# ############################### 函数说明 ###############################
-# 更新current_coordinates.json文件中key指定的坐标
-# ########################################################################
 def record_ark_barrels(row, line, deviation: list):
     """
     用于更新柜桶坐标的误差，在原有的记录中 + 目前的输入值
@@ -105,7 +102,15 @@ def setup():
 
 # 循环部分
 def loop():
-    record_ark_barrels(0, 0, [1, -1, 0])
+    # record_ark_barrels(0, 0, [1, -1, 0])
+    deviation = [0, 1, 2]
+    # deviation = [1, 2, 3]
+    for i in deviation:
+        if i:
+            print('T')
+        else:
+            print('F')
+
 
 
 # 结束释放

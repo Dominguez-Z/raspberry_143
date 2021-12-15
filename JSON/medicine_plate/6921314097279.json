@@ -4,11 +4,14 @@
   "width":64,
   "agg_thickness":7.2,
   "thickness":0.35,
+  "num":18,
   "medicine_distribution":{
     "regularity":1,
     "center":{
+      "narrow_side":[9.5, 10.3],
+      "broad_side":[9.2, 13.3],
       "x_sum":4,
-      "x_distance":15.1,
+      "x_distance":15.15,
       "y_sum":6,
       "y_distance":15.2
     }
@@ -17,12 +20,6 @@
     "x":{
       "num_center":1,
       "center_deviation":7
-    },
-    "y":{
-      "backboard":104.8
-    },
-    "z":{
-      "baseboard":8.55
     }
   }
 }

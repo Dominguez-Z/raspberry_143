@@ -20,11 +20,12 @@ import time
 import math
 import matplotlib.pyplot as plt
 import motor.pulse_width_arithmetic as pul_wid_ari
+import GPIO.define as gpio_define
 
 ##########################################################################
 # 常数值设定区域
-X_PUL = 19          # X轴脉冲控制信号,19
-X_DIR = 26          # X轴方向控制信号，False是向右，True是向左,26
+X_PUL = gpio_define.MOTOR_X_PUL          # X轴脉冲控制信号,19
+X_DIR = gpio_define.MOTOR_X_DIR          # X轴方向控制信号，False是向右，True是向左,26
 
 # 用于控制运动方向
 X_LEFT = True
@@ -194,13 +195,13 @@ def main():
 
         print("X轴向左第 %s 次" % i)
         # position_fine_tuning(0.5)
-        move(-0.06, 100)
+        move(-20, 100)
         print("暂停")
         time.sleep(2)
 
         print("X轴向右 %s 次" % i)
         # position_fine_tuning(-0.5)
-        move(-0.06, 100)
+        move(20, 100)
         print("暂停")
         time.sleep(2)
         '''

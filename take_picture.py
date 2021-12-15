@@ -7,7 +7,7 @@
 #    describe:  拍照测试图像识别
 #########################################################
 import JSON.current_coordinates as current_coordinates
-import camera.camera_0 as camera
+import image.camera_0 as camera
 import electromagnet.strike_drug_drive as strike_drug
 import motor.y_drive as y
 import motor.x_drive as x

@@ -22,16 +22,17 @@ import motor.y_drive as y
 import motor.z_drive as z
 import JSON.constant_coordinates as constant_coordinates
 import JSON.current_coordinates as current_coordinates
+import GPIO.define as gpio_define
 # import math
 
 # ################################################# 常数值设定区域 #################################################
-RESET = 20      # 光电开关信号接在GPIO20
+RESET = gpio_define.INPUT_MOTOR_ORIGIN      # 光电开关信号接在GPIO20
 motor_stop = False   # 设定电机停止标志
 # 单位秒，检测成功后间隔改时间后放回，且2倍值用于下降沿检测间隔设定，避免多次触发回调函数
 BACK_SLEEP_TIME = 0.5
 # ################  设定X轴的参数  #################
-X_PUL = 19      # X轴脉冲控制信号,19
-X_DIR = 26      # X轴方向控制信号，False是向右，True是向左,26
+X_PUL = gpio_define.MOTOR_X_PUL      # X轴脉冲控制信号,19
+X_DIR = gpio_define.MOTOR_X_DIR      # X轴方向控制信号，False是向右，True是向左,26
 # 用于控制运动方向
 X_LEFT = True
 X_RIGHT = False
@@ -40,8 +41,8 @@ X_UNIT_STEP_MM = 50.0407 * 1e-3            # 设定单位步长，由实际测�
 X_RANGE_MM = 1100
 X_BACK_DISTANCE = 10                            # 检测成功后返回的距离，不需要考虑正负，默认反方向
 # ################  设定Y轴的参数  #################
-Y_PUL = 8           # Y轴脉冲控制信号
-Y_DIR = 7           # Y轴方向控制信号，False是向下，True是向上
+Y_PUL = gpio_define.MOTOR_Y_PUL           # Y轴脉冲控制信号
+Y_DIR = gpio_define.MOTOR_Y_DIR           # Y轴方向控制信号，False是向下，True是向上
 # 用于控制运动方向
 Y_BACK = True
 Y_FRONT = False
@@ -50,8 +51,8 @@ Y_UNIT_STEP_MM = 29.96 * 1e-3            # 设定单位步长，由实际测了�
 Y_RANGE_MM = -200
 Y_BACK_DISTANCE = 5                             # 检测成功后放回的距离，不需要考虑正负，默认反方向
 # ################  设定Z轴的参数  #################
-Z_PUL = 11      # Z轴脉冲控制信号,11
-Z_DIR = 16      # Z轴方向控制信号，False是向右，True是向左,16
+Z_PUL = gpio_define.MOTOR_Z_PUL      # Z轴脉冲控制信号,11
+Z_DIR = gpio_define.MOTOR_Z_DIR      # Z轴方向控制信号，False是向右，True是向左,16
 Z_UP = False
 Z_DOWN = True
 Z_UNIT_STEP_MM = 50.0625 * 1e-3            # 设定单位步长，由实际测了计算获知，1000细分
@@ -453,7 +454,8 @@ def destroy():
 
     """
     # RESET 接在GPIO20，编号为1-40中的38
-    GPIO.cleanup(38)              # 释放控制
+    GPIO.remove_event_detect(RESET)
+    GPIO.cleanup(RESET)              # 释放控制
     return
 
 

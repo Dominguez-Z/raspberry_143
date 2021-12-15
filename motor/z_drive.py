@@ -20,11 +20,12 @@ import time
 import math
 import matplotlib.pyplot as plt
 import motor.pulse_width_arithmetic as pul_wid_ari
+import GPIO.define as gpio_define
 
 ##########################################################################
 # 常数值设定区域
-Z_PUL = 11       # Z轴脉冲控制信号,11
-Z_DIR = 16      # Z轴方向控制信号,16
+Z_PUL = gpio_define.MOTOR_Z_PUL         # Z轴脉冲控制信号,11
+Z_DIR = gpio_define.MOTOR_Z_DIR         # Z轴方向控制信号,16
 # 用于控制运动方向
 Z_UP = False
 Z_DOWN = True

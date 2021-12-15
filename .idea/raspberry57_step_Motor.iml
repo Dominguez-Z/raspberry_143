@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/JSON/data/备份" />
+      <excludeFolder url="file://$MODULE_DIR$/image/picture" />
       <excludeFolder url="file://$MODULE_DIR$/medicine/原固定座标程序" />
       <excludeFolder url="file://$MODULE_DIR$/medicine/备份" />
       <excludeFolder url="file://$MODULE_DIR$/motor/备份" />
@@ -10,7 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/历史文件" />
       <excludeFolder url="file://$MODULE_DIR$/备份" />
     </content>
-    <orderEntry type="jdk" jdkName="Remote Python 3.5.3 (sftp://pi@192.168.1.143:22/usr/bin/python3.5)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.7.3 (sftp://pi@192.168.1.143:22/home/pi/venv/pywork143/bin/python3.7)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R User Library" level="project" />
     <orderEntry type="library" name="R Skeletons" level="application" />

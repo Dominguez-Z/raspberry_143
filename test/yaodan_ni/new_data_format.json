@@ -1,0 +1,699 @@
+{
+    "patient_id": "0000000000001",
+    "phoneNumber": "13622579877",
+    "patient": {
+        "realname": "邝俊伟",
+        "phone": "13149917244",
+        "area": "广东省江门市",
+        "age": 54,
+        "gender": "男"
+    },
+    "hospital": {
+        "name": "江门市第一人民医院",
+        "area": "广东省江门市蓬江区",
+        "tel_booking": "07501234567",
+        "tel_review": "07501234567"
+    },
+    "medicineList": {
+        "id": "201912200010",
+        "time": "2021/03/05 10:23:31",
+        "doctor": "张 斯 金",
+        "diagnostic": [
+            "播散性带状疱疹"
+        ],
+        "prescription_boxes": [
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6919041182214",
+                                "medicine_name": "阿昔洛韦片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    },
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6910942381393",
+                                "medicine_name": "维生素B1片",
+                                "type": "eat"
+                            },
+                            {
+                                "medicine_code": "6910942381270",
+                                "medicine_name": "维生素C片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "qr_code": "i",
+                "cells": [
+                    {
+                        "before_meal": "false",
+                        "after_meal": "false",
+                        "pills": [
+                            {
+                                "medicine_code": "6905039020040",
+                                "medicine_name": "双氯芬酸钠缓释片",
+                                "type": "eat"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

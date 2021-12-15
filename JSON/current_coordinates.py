@@ -51,8 +51,9 @@ def record(key, value):
     # print("原有坐标%s" % current_coordinates[key])              # 打印原有key指定的数值
     current_coordinates_all[key] = value                        # 修改key指定的数值为接收到的value
     # print("更新后坐标%s" % current_coordinates[key])            # 打印修改后key指定的数值
-    f = open(current_coordinates_file_path, 'w')                # 打开位置坐标文件并指定为可写
-    json.dump(current_coordinates_all, f, indent=4)             # 写入修改好后的全部坐标
+    # 注意json文件中有中文内容，需要注明编码格式encoding及ensure_ascii
+    f = open(current_coordinates_file_path, 'w', encoding='utf-8')          # 打开位置坐标文件并指定为可写
+    json.dump(current_coordinates_all, f, ensure_ascii=False, indent=4)     # 写入修改好后的全部坐标
     f.close()                                                   # 关闭文件
 
 

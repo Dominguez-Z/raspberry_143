@@ -28,12 +28,13 @@ X_RANGE = [63.1, 1120.1]
 Y_RANGE = [64.8, 199]
 Z_RANGE = [15.3, 863.3]
 X1_RANGE = [29, 69]
-Y1_RANGE = [-122, 0]
+Y1_RANGE = [-121, 0]
 
 # 记录坐标的小数位数
 RECORD_DECIMALS = 8
 # ########################################################################
-
+# 创建一个线程锁，用于同时调用不同的轴时，更新坐标读写文件的时候产生冲突
+threads_lock = threading.Lock()
 
 def xz_move_y_safe():
     """
@@ -118,7 +119,11 @@ def only_y(coordinate_now, coordinate_target, rpm_max=None):
         y_distance_mm = round(step_num * unit_step, RECORD_DECIMALS)            # 计算出实际位移量mm
         current_coordinates_y += y_distance_mm                                  # 更新Y轴现有位置
         current_coordinates_y = round(current_coordinates_y, RECORD_DECIMALS)   # 限定小数点后8位
+        # 线程加锁
+        threads_lock.acquire()
         current_coordinates.record('motor_y', current_coordinates_y)            # 执行更新记录
+        # 线程解锁
+        threads_lock.release()
         print("96:更新后y坐标：%s" % current_coordinates_y)
     else:
         print("98:y轴运动将超出安全范围[%s, %s]，禁止此次运动" % (Y_RANGE[0], Y_RANGE[1]))
@@ -154,7 +159,11 @@ def only_x(coordinate_now, coordinate_target, rpm_max=None):
         x_distance_mm = round(step_num * unit_step, RECORD_DECIMALS)            # 计算出实际位移量mm
         current_coordinates_x += x_distance_mm                                  # 更新X轴现有位置
         current_coordinates_x = round(current_coordinates_x, RECORD_DECIMALS)   # 限定小数点后8位
+        # 线程加锁
+        threads_lock.acquire()
         current_coordinates.record('motor_x', current_coordinates_x)            # 执行更新记录
+        # 线程解锁
+        threads_lock.release()
         print("121:更新后x坐标：%s" % current_coordinates_x)
     else:
         print("123:x轴运动将超出安全范围[%s, %s]，禁止此次运动" % (X_RANGE[0], X_RANGE[1]))
@@ -189,7 +198,11 @@ def only_z(coordinate_now, coordinate_target, rpm_max=None):
         z_distance_mm = round(step_num * unit_step, RECORD_DECIMALS)            # 计算出实际位移量mm
         current_coordinates_z += z_distance_mm                                  # 更新Z轴现有位置
         current_coordinates_z = round(current_coordinates_z, RECORD_DECIMALS)   # 限定小数点后8位
+        # 线程加锁
+        threads_lock.acquire()
         current_coordinates.record('motor_z', current_coordinates_z)            # 执行更新记录
+        # 线程解锁
+        threads_lock.release()
         print("152:更新后z坐标：%s" % current_coordinates_z)
     else:
         print("154:z轴运动将超出安全范围[%s, %s]，禁止此次运动" % (Z_RANGE[0], Z_RANGE[1]))
@@ -222,7 +235,11 @@ def only_x1(coordinate_target, rpm_max=None):
     x1_distance_mm = round(step_num * unit_step, RECORD_DECIMALS)               # 计算出实际位移量mm
     current_coordinates_x1 += x1_distance_mm                                    # 更新x1轴现有位置
     current_coordinates_x1 = round(current_coordinates_x1, RECORD_DECIMALS)     # 限定小数点后8位
-    current_coordinates.record('motor_x1', current_coordinates_x1)              # 执行更新记录
+    # 线程加锁
+    threads_lock.acquire()
+    current_coordinates.record('motor_x1', current_coordinates_x1)  # 执行更新记录
+    # 线程解锁
+    threads_lock.release()
     print("182:更新后x1宽度：%s" % current_coordinates_x1)
     return
 
@@ -256,7 +273,11 @@ def only_y1(coordinate_now, coordinate_target, rpm_max=None):
         print(y1_distance_mm, current_coordinates_y1)
         current_coordinates_y1 += y1_distance_mm                            # 更新y1轴现有位置
         current_coordinates_y1 = round(current_coordinates_y1, 8)           # 限定小数点后8位
-        current_coordinates.record('motor_y1', current_coordinates_y1)      # 执行更新记录
+        # 线程加锁
+        threads_lock.acquire()
+        current_coordinates.record('motor_y1', current_coordinates_y1)  # 执行更新记录
+        # 线程解锁
+        threads_lock.release()
         print("207:更新后y1坐标：%s" % current_coordinates_y1)
     else:
         print("209:y1轴运动将超出安全范围[%s, %s]，禁止此次运动" % (Y1_RANGE[0], Y1_RANGE[1]))
@@ -342,14 +363,38 @@ def loop():
     # only_y(the_front_tong, image_recognition_coordinate)
     # time.sleep(1)
 
-    while True:
-        only_x(0, 1.5927)
+    i = 0
+    while i < 1:
+        i = i + 1
+        only_z(0, 6.7, 10)
         print("暂停")
-        time.sleep(3)
+        time.sleep(0.1)
 
-        only_x(0, -1.5927)
+        only_z(6.7, 10.5, 20)
         print("暂停")
-        time.sleep(3)
+        time.sleep(0.1)
+
+        only_z(10.5, 11.7, 15)
+        print("暂停")
+        time.sleep(0.1)
+
+        only_z(11.7, 10.5, 15)
+        print("暂停")
+        time.sleep(0.1)
+
+        only_z(10.5, 0)
+        print("暂停")
+        print(i)
+        time.sleep(1.5)
+
+    # while True:
+    #     only_x(0, 1.5927)
+    #     print("暂停")
+    #     time.sleep(3)
+    #
+    #     only_x(0, -1.5927)
+    #     print("暂停")
+    #     time.sleep(3)
         # only_x1(65)
         # print("暂停")
         # time.sleep(2)

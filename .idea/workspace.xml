@@ -1,0 +1,2593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="982f27f0-fef6-4d2a-ac79-c87102664adc" name="Default Changelist" comment="掉药功能创建">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/data/备份/21-03-22/ark_barrels_coordinates.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/data/备份/params_correction.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/medicine_plate_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check/diagonal_len_list.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check/panel_standard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check/predictions_model.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/electromagnet/push_drug_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/camera_0.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/diagonal_len_list.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/0/gray_image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/0/push_out_ready_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/0/thresh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/1/gray_image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/1/push_out_ready_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/1/thresh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/2.1/gray_image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/2.1/push_out_ready_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/2.1/thresh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_160.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_165.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_170.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_175.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_180.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_185.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_190.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_190.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_195.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_205.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_210.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_215.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_220.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_225.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/focus_test_230.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/gray_image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/img_cut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_4600.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_5100.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_5600.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_6500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_MJPG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_YUYV.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/photo_time_auto.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/push_out.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/push_out_ready_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/push_out_ready_check_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/result.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/1/img_cut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/1/push_out_ready_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/1/result.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/img_cut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/push_out_ready_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/shibai/result.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_140.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_150.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_160.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_165.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_170.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_175.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_180.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_185.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_190.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_195.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/focus_test_210.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/gray_image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/push_out_ready_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test/thresh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test_PLATE.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/test_PLATE_light.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/thresh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/存根/摇药图像识别有无药/no.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/存根/摇药图像识别有无药/yes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/camera0/存根/摇药图像识别有无药3264.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/dingwei.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video0/video0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/100.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/1000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/150.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/160.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/170.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/180.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/190.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/210.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/220.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/230.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/240.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/250.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/260.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/270.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/280.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/290.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/310.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/320.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/330.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/340.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/350.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/360.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/370.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/380.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/390.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/400.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/410.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/420.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/430.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/440.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/450.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/50.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/600.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/70.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/700.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/80.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/800.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/900.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/ark_center_offset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/ark_center_offset_gray.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_0.9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_1.9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_2.9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/test_QR_3.5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/tong_center_offset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/tong_center_offset_1 - 副本.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/picture/video1/tong_center_offset_gray.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qr_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qr_code_y_dis_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/9999999999.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/big.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/big_enhed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o_enhed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o_enhed0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/big_o_enhed1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/qrcode/编号9999999999.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/bottle_capsule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/drop.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/21-6-7/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/21-6-7/bottle-[21-6-16].py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/21-6-7/plate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/drop_211213.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/bottle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/cut_press_medicine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/cut_press_medicine_capsule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/press_medicine_capsule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/spin_medicine_bottle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/take_medicine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/备份/原固定座标程序/take_medicine_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/lmr_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/go.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/take_medicine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/x_check.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/x_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/xz_control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/y_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2020-11-23/z_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x1_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_check.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive_a.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive_a2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/x_drive_a3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/y1_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/y_check.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/y_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/z_check.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/z_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-2-26/z_drive_old.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/pulse_width_arithmetic_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/pulse_width_arithmetic_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/x1_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/x_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/y1_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/y_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-10/z_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-3-9/pulse_width_arithmetic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/总时间/pulse_width_arithmetic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/总时间/x_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/阶梯时间/pulse_width_arithmetic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-10【快加速】/阶梯时间/x_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-2/go.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/pulse_width_arithmetic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/x_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/y1_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/y_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/2021-4-9/z_drive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/历史文件/test_go.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/历史文件/test_take_medicine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motor/备份/历史文件/xz_control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/Fixed_point_coordinates.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/new/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/new/prescription.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/new_data_format.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/test1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaodan_ni" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaodan_ni.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaogui.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaowu_md.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/yaowu_wz.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/yaodan_ni/zidian.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/test/LED_SWITCH.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/test/LED_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/test/Slot_photoelectric_switch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/test/calculator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/test/camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/test/test_steering_engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/test/test_threading.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_X.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_XY.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_Y.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/57_step_Motor_onestep.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/step_Motor_switch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/test_XY_arithmetic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/xy_move/test_XY_arithmetic_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/z_move/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/历史文件/z_move/step_motor_z.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/备份/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/raspberry57_step_Motor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/raspberry57_step_Motor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/ark_barrels_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/ark_barrels_coordinates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/constant_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/constant_coordinates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/coordinate_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/coordinate_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/current_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/current_coordinates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/data/ark_barrels_coordinates.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/ark_barrels_coordinates.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/data/constant_coordinates.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/constant_coordinates.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/data/coordinates_converter.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/coordinates_converter.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/data/current_coordinates.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/current_coordinates.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/data/params_correction.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/data/params_correction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6902170000238.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6902170000238.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6921314097279.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6921314097279.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6924168200093.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6924168200093.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/6936660900203.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/6936660900203.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/medicine_plate/README.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/medicine_plate/README.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/params_correction.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/params_correction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera/camera_0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera/camera_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/check/ark_barrels.py" beforeDir="false" afterPath="$PROJECT_DIR$/check/ark_barrels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electromagnet/strike_drug_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/electromagnet/strike_drug_drive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/led/led_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/led/led_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/bottle.py" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/bottle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/plate.py" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/plate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/go.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/go.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/pulse_width_arithmetic.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/pulse_width_arithmetic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/reset.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/reset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/steering_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/steering_engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/x1_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/x1_drive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/x_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/x_drive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/y1_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/y1_drive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/y_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/y_drive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motor/z_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/motor/z_drive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/take_picture.py" beforeDir="false" afterPath="$PROJECT_DIR$/take_picture.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$LED_test.coverage" NAME="LED_test Coverage Results" MODIFIED="1547535176256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$step_Motor_switch.coverage" NAME="step_Motor_switch Coverage Results" MODIFIED="1548313177028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$imdiff1v2_1_.coverage" NAME="imdiff1v2(1) Coverage Results" MODIFIED="1627288772927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Desktop" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$x_drive_a2.coverage" NAME="x_drive_a2 Coverage Results" MODIFIED="1614584639596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test_steering_engine.coverage" NAME="test_steering_engine Coverage Results" MODIFIED="1595575406792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$x_drive_a.coverage" NAME="x_drive_a Coverage Results" MODIFIED="1614074050646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$medicine_plate.coverage" NAME="medicine_plate Coverage Results" MODIFIED="1633504758036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JSON" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$57_step_Motor_onestep.coverage" NAME="57_step_Motor_onestep Coverage Results" MODIFIED="1560765135278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$57_step_Motor_XY.coverage" NAME="57_step_Motor_XY Coverage Results" MODIFIED="1562637406828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$ark_barrels_coordinates.coverage" NAME="ark_barrels_coordinates Coverage Results" MODIFIED="1634096915857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JSON" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$lmr_drive.coverage" NAME="lmr_drive Coverage Results" MODIFIED="1622022865708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$jump.coverage" NAME="jump Coverage Results" MODIFIED="1609315967151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/medicine" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$y_check.coverage" NAME="y_check Coverage Results" MODIFIED="1607486013096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$steering_engine__1_.coverage" NAME="steering_engine (1) Coverage Results" MODIFIED="1639383015127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test_go.coverage" NAME="test_go Coverage Results" MODIFIED="1606123161435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$go.coverage" NAME="go Coverage Results" MODIFIED="1626148615517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$camera.coverage" NAME="camera Coverage Results" MODIFIED="1637549730673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$steering_engine.coverage" NAME="steering_engine Coverage Results" MODIFIED="1639379619205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$input.coverage" NAME="input Coverage Results" MODIFIED="1638520515091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GPIO" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$57_step_Motor_Y.coverage" NAME="57_step_Motor_Y Coverage Results" MODIFIED="1561016290576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$x_drive.coverage" NAME="x_drive Coverage Results" MODIFIED="1638676171903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$steering_engine_new.coverage" NAME="steering_engine_new Coverage Results" MODIFIED="1639381184498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$57_step_Motor_XY__1_.coverage" NAME="57_step_Motor_XY (1) Coverage Results" MODIFIED="1585107140692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xy_move" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1591344820811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/led" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$params_correction.coverage" NAME="params_correction Coverage Results" MODIFIED="1630481673373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JSON" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$xyz_check.coverage" NAME="xyz_check Coverage Results" MODIFIED="1589527344873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/check" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$dingwei.coverage" NAME="dingwei Coverage Results" MODIFIED="1609927749945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/camera/picture" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$qrcode.coverage" NAME="qrcode Coverage Results" MODIFIED="1632378398946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$check.coverage" NAME="check Coverage Results" MODIFIED="1607497736242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$57_step_Motor.coverage" NAME="57_step_Motor Coverage Results" MODIFIED="1548209823453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$xyz_check_test.coverage" NAME="xyz_check_test Coverage Results" MODIFIED="1589449359893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/check" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test_XY_arithmetic_2.coverage" NAME="test_XY_arithmetic_2 Coverage Results" MODIFIED="1614220849119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xy_move" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$constant_coordinates.coverage" NAME="constant_coordinates Coverage Results" MODIFIED="1615876177243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JSON" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$led_class.coverage" NAME="led_class Coverage Results" MODIFIED="1635317061932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/led" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test_take_medicine.coverage" NAME="test_take_medicine Coverage Results" MODIFIED="1607070419284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$camera_0.coverage" NAME="camera_0 Coverage Results" MODIFIED="1626945774191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/camera" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$main.coverage" NAME="main Coverage Results" MODIFIED="1639388612919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$Slot_photoelectric_switch.coverage" NAME="Slot_photoelectric_switch Coverage Results" MODIFIED="1548210708659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$qr_code.coverage" NAME="qr_code Coverage Results" MODIFIED="1632996477536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$reader.coverage" NAME="reader Coverage Results" MODIFIED="1637719892142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image/picture/video0" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$y1_drive.coverage" NAME="y1_drive Coverage Results" MODIFIED="1639021949294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test_threading.coverage" NAME="test_threading Coverage Results" MODIFIED="1587604229230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$fixed_point_coordinates.coverage" NAME="fixed_point_coordinates Coverage Results" MODIFIED="1608019086615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JSON" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$camera_1.coverage" NAME="camera_1 Coverage Results" MODIFIED="1591170365165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/camera" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$take_photo.coverage" NAME="take_photo Coverage Results" MODIFIED="1591000398919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/camera" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$z_check.coverage" NAME="z_check Coverage Results" MODIFIED="1607330677571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$x1_drive.coverage" NAME="x1_drive Coverage Results" MODIFIED="1630053462119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$push_drug_drive.coverage" NAME="push_drug_drive Coverage Results" MODIFIED="1630381792183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/electromagnet" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$drop.coverage" NAME="drop Coverage Results" MODIFIED="1622022824220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/medicine" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1591350565461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/led" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$z2_drive.coverage" NAME="z2_drive Coverage Results" MODIFIED="1606121077979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$steering_engine_211213.coverage" NAME="steering_engine_211213 Coverage Results" MODIFIED="1639379156202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor/备份" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$x_drive_a3.coverage" NAME="x_drive_a3 Coverage Results" MODIFIED="1614221944198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$xz_control.coverage" NAME="xz_control Coverage Results" MODIFIED="1585121213683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test_XY_arithmetic.coverage" NAME="test_XY_arithmetic Coverage Results" MODIFIED="1612492286471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xy_move" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$x_check.coverage" NAME="x_check Coverage Results" MODIFIED="1607331627975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$z1_drive.coverage" NAME="z1_drive Coverage Results" MODIFIED="1606120396037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$z_drive__1_.coverage" NAME="z_drive (1) Coverage Results" MODIFIED="1606120951995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$LED_SWITCH.coverage" NAME="LED_SWITCH Coverage Results" MODIFIED="1548216492635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$y_drive.coverage" NAME="y_drive Coverage Results" MODIFIED="1618211865707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$plate.coverage" NAME="plate Coverage Results" MODIFIED="1638681676611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/medicine" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$step_Motor_Z.coverage" NAME="step_Motor_Z Coverage Results" MODIFIED="1584089034950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/z_move" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$bottle.coverage" NAME="bottle Coverage Results" MODIFIED="1637720054703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/medicine" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$take_picture.coverage" NAME="take_picture Coverage Results" MODIFIED="1609989328635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$calculator.coverage" NAME="calculator Coverage Results" MODIFIED="1546066494578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$strike_drug_drive.coverage" NAME="strike_drug_drive Coverage Results" MODIFIED="1630381813595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/electromagnet" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$pulse_width_arithmetic.coverage" NAME="pulse_width_arithmetic Coverage Results" MODIFIED="1618025689701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$ark_barrels.coverage" NAME="ark_barrels Coverage Results" MODIFIED="1630575507793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/check" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$z_drive.coverage" NAME="z_drive Coverage Results" MODIFIED="1618212671555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motor" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$panel_standard.coverage" NAME="panel_standard Coverage Results" MODIFIED="1634108459779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/check" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$current_coordinates.coverage" NAME="current_coordinates Coverage Results" MODIFIED="1615878312265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JSON" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$test.coverage" NAME="test Coverage Results" MODIFIED="1591339610309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/led" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$camera__1_.coverage" NAME="camera (1) Coverage Results" MODIFIED="1631677240105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$takePhoto.coverage" NAME="takePhoto Coverage Results" MODIFIED="1591170446097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/raspberry57_step_Motor$coordinate_converter.coverage" NAME="coordinate_converter Coverage Results" MODIFIED="1633512932987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JSON" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/image/camera_0.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="250">
+                    <caret line="183" column="44" lean-forward="true" selection-start-line="183" selection-start-column="44" selection-end-line="183" selection-end-column="44" />
+                    <folding>
+                      <element signature="e#261#270#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/take_picture.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="2184">
+                    <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+                    <folding>
+                      <element signature="e#266#320#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/../../Desktop/Servo_Driver_HAT/Raspberry Pi/python3/PCA9685.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1092">
+                    <caret line="41" column="10" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="10" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/image/test.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1456">
+                    <caret line="56" selection-start-line="56" selection-end-line="56" />
+                    <folding>
+                      <element signature="e#0#13#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/motor/reset.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-5902">
+                    <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+                    <folding>
+                      <element signature="e#451#474#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/JSON/data/constant_coordinates.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="28">
+                    <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/JSON/data/ark_barrels_coordinates.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1932">
+                    <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/JSON/data/coordinates_converter.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="980">
+                    <caret line="35" column="12" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="12" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/JSON/data/current_coordinates.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="196">
+                    <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/JSON/data/params_correction.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="307">
+                    <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2056076516">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="18" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.open.time.94" value="1" />
+          <entry key="project.opened" value="18" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="13" />
+          <entry key="dummy" value="29" />
+          <entry key="py" value="2389" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="29" />
+          <entry key="Python" value="2402" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-177876829">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="87" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="5" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.121" value="1" />
+          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.17" value="5" />
+          <entry key="project.open.time.18" value="14" />
+          <entry key="project.open.time.19" value="17" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.20" value="34" />
+          <entry key="project.open.time.21" value="11" />
+          <entry key="project.open.time.22" value="10" />
+          <entry key="project.open.time.23" value="11" />
+          <entry key="project.open.time.24" value="4" />
+          <entry key="project.open.time.25" value="6" />
+          <entry key="project.open.time.26" value="3" />
+          <entry key="project.open.time.27" value="2" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="4" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.31" value="2" />
+          <entry key="project.open.time.32" value="4" />
+          <entry key="project.open.time.33" value="2" />
+          <entry key="project.open.time.34" value="2" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.36" value="2" />
+          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.40" value="2" />
+          <entry key="project.open.time.41" value="2" />
+          <entry key="project.open.time.43" value="2" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.54" value="1" />
+          <entry key="project.open.time.56" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="174" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="8" />
+          <entry key="dummy" value="138" />
+          <entry key="json" value="3591" />
+          <entry key="py" value="75401" />
+          <entry key="txt" value="131" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="3591" />
+          <entry key="PLAIN_TEXT" value="269" />
+          <entry key="Python" value="75409" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="ipynb" value="1" />
+          <entry key="jpg" value="18" />
+          <entry key="js" value="1" />
+          <entry key="json" value="484" />
+          <entry key="py" value="1029" />
+          <entry key="pyi" value="1" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IPNB" value="1" />
+          <entry key="Image" value="18" />
+          <entry key="JSON" value="484" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="1029" />
+          <entry key="PythonStub" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="17" />
+          <entry key="git.branch.create.new" value="6" />
+          <entry key="git.branch.delete.local" value="4" />
+          <entry key="git.branch.delete.remote" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+              <folding>
+                <element signature="n#!!doc" />
+                <element signature="e#273#286#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_h.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/medicine/bottle.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+              <folding>
+                <element signature="e#258#314#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/medicine/plate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12496">
+              <caret line="923" column="4" selection-start-line="923" selection-start-column="4" selection-end-line="923" selection-end-column="4" />
+              <folding>
+                <element signature="n#!!doc" />
+                <element signature="e#363#463#1" />
+                <element signature="e#1005#1108#0" />
+                <element signature="e#1535#2513#0" />
+                <element signature="e#1535#1972#1" />
+                <element signature="e#2306#2341#0" />
+                <element signature="e#2406#2473#0" />
+                <element signature="e#2555#3293#0" />
+                <element signature="e#2555#2779#1" />
+                <element signature="e#2784#2804#0" />
+                <element signature="e#2825#2926#1" />
+                <element signature="e#3036#3044#0" />
+                <element signature="e#3382#4761#0" />
+                <element signature="e#3382#3870#1" />
+                <element signature="e#4169#4515#0" />
+                <element signature="e#4421#4429#0" />
+                <element signature="e#4534#4709#0" />
+                <element signature="e#4837#5698#0" />
+                <element signature="e#4837#5269#1" />
+                <element signature="e#5561#5569#0" />
+                <element signature="e#5753#6755#0" />
+                <element signature="e#5753#6021#1" />
+                <element signature="e#6113#6125#0" />
+                <element signature="e#6785#6955#0" />
+                <element signature="e#6785#6875#1" />
+                <element signature="e#6980#7200#0" />
+                <element signature="e#6980#7016#1" />
+                <element signature="e#7259#7485#1" />
+                <element signature="e#7723#7833#0" />
+                <element signature="e#8091#8099#0" />
+                <element signature="e#8702#8745#0" />
+                <element signature="e#8986#9011#0" />
+                <element signature="e#9478#9500#0" />
+                <element signature="e#9542#9634#1" />
+                <element signature="e#10336#10357#0" />
+                <element signature="e#10668#10673#0" />
+                <element signature="e#11354#11382#0" />
+                <element signature="e#12041#12074#0" />
+                <element signature="e#13522#13690#1" />
+                <element signature="e#13937#14047#0" />
+                <element signature="e#14695#14735#0" />
+                <element signature="e#15149#15161#0" />
+                <element signature="e#15251#15259#0" />
+                <element signature="e#15684#15692#0" />
+                <element signature="e#16160#16176#0" />
+                <element signature="e#16413#16423#0" />
+                <element signature="e#16663#16679#0" />
+                <element signature="e#16777#16785#0" />
+                <element signature="e#17141#17149#0" />
+                <element signature="e#17265#18049#0" />
+                <element signature="e#17265#17287#1" />
+                <element signature="e#18099#18313#1" />
+                <element signature="e#18361#18383#0" />
+                <element signature="e#18852#18878#0" />
+                <element signature="e#19287#19308#0" />
+                <element signature="e#19386#19400#0" />
+                <element signature="e#19759#19786#0" />
+                <element signature="e#20188#20213#0" />
+                <element signature="e#20770#22240#0" />
+                <element signature="e#20770#20904#1" />
+                <element signature="e#21057#21167#0" />
+                <element signature="e#21663#21689#0" />
+                <element signature="e#22098#22107#0" />
+                <element signature="e#22324#22700#1" />
+                <element signature="e#22705#22808#0" />
+                <element signature="e#23010#23133#1" />
+                <element signature="e#23138#23149#0" />
+                <element signature="e#23221#23243#0" />
+                <element signature="e#23670#24764#0" />
+                <element signature="e#23670#23678#0" />
+                <element signature="e#23760#23860#0" />
+                <element signature="e#23895#23994#0" />
+                <element signature="e#24413#24764#0" />
+                <element signature="e#24456#24764#0" />
+                <element signature="e#24544#24669#0" />
+                <element signature="e#24720#24764#0" />
+                <element signature="e#24920#25180#0" />
+                <element signature="e#24990#25097#0" />
+                <element signature="e#25140#25180#0" />
+                <element signature="e#26694#27047#1" />
+                <element signature="e#27052#27155#0" />
+                <element signature="e#27291#27401#0" />
+                <element signature="e#27793#28264#0" />
+                <element signature="e#27793#27820#1" />
+                <element signature="e#28588#28676#0" />
+                <element signature="e#28775#28987#0" />
+                <element signature="e#28950#28987#0" />
+                <marker date="1639037519395" expanded="true" signature="12528:14854" ph="..." />
+                <marker date="1639037519395" expanded="true" signature="29920:29925" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JSON/current_coordinates.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1">
+              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/medicine/drop.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+              <folding>
+                <element signature="e#321#332#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/-1969707174/1992186930/motor/go.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="789">
+              <caret line="77" column="77" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/motor/steering_engine.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="162" column="14" lean-forward="true" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
+              <folding>
+                <element signature="e#307#330#0" expanded="true" />
+                <marker date="1639381181817" expanded="true" signature="673:2846" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GPIO/define.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>event_detect</find>
+      <find>True</find>
+      <find>&quot;ready_point&quot;</find>
+      <find>&quot;baseboard&quot;</find>
+      <find>TAKE_MEDICINE_ANGLE_PUSH_OUT</find>
+      <find>BUFFERSIZE</find>
+      <find>FRAME_HEIGHT</find>
+      <find>plate_info[&quot;ark_barrels&quot;]</find>
+      <find>plate_info</find>
+      <find>video_introduction</find>
+      <find>[&quot;ark_barrels&quot;]</find>
+      <find>imwrite</find>
+      <find>self.video</find>
+      <find>BUFFER</find>
+      <find>FOCUS</find>
+      <find>tong</find>
+      <find>imshow</find>
+      <find>BarCode</find>
+      <find>.replace</find>
+      <find>ark_barrel_img_path</find>
+      <find>tong_img_path</find>
+      <find>medicine_plate</find>
+      <find>ark_barrels_z_dis</find>
+      <find>picture_dir_path</find>
+      <find>y1_correct</find>
+      <find>get_bottle</find>
+      <find>get_plate_z</find>
+      <find>GPIO.PUD_UP</find>
+      <find>pull_up_down</find>
+      <find>servo</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>x1</replace>
+      <replace>widen</replace>
+      <replace>narrow</replace>
+      <replace>z1</replace>
+      <replace>y1</replace>
+      <replace>z2</replace>
+      <replace>y_y1</replace>
+      <replace>y</replace>
+      <replace>Y1</replace>
+      <replace>z</replace>
+      <replace>645.75</replace>
+      <replace>0</replace>
+      <replace>644.5</replace>
+      <replace>get_plate</replace>
+      <replace>get_plate_y</replace>
+      <replace>.get_plate_z</replace>
+      <replace>RESET</replace>
+      <replace>M</replace>
+      <replace>m</replace>
+      <replace>font</replace>
+      <replace>front</replace>
+      <replace>FRONT</replace>
+      <replace>back</replace>
+      <replace>BACK</replace>
+      <replace>前</replace>
+      <replace>后</replace>
+      <replace>L</replace>
+      <replace>LMR</replace>
+      <replace>lmr</replace>
+      <replace>ark</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON</dir>
+      <dir>D:\Users\user\PycharmProjects\raspberry57_step_Motor</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev-Dominguez_Z" />
+      </map>
+    </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="feature-strike_drug" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/image/camera.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Desktop/imdiff1v2(1).py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../../文档_Moongrass/13-代码/3-ACM/1-推荐系统/天池-新闻推荐itemCF单路召回/data.ipynb" />
+        <option value="$PROJECT_DIR$/medicine/bottle_capsule.py" />
+        <option value="$PROJECT_DIR$/JSON/constant_coordinates.py" />
+        <option value="$PROJECT_DIR$/JSON/data/constant_coordinates.json" />
+        <option value="$PROJECT_DIR$/JSON/medicine_plate/6921314097279.json" />
+        <option value="$PROJECT_DIR$/JSON/medicine_plate/6936660900203.json" />
+        <option value="$PROJECT_DIR$/JSON/medicine_plate/6902170000238.json" />
+        <option value="$PROJECT_DIR$/JSON/medicine_plate/README.json" />
+        <option value="$PROJECT_DIR$/JSON/medicine_plate/6924168200093.json" />
+        <option value="$PROJECT_DIR$/camera/camera_0.py" />
+        <option value="$PROJECT_DIR$/JSON/current_coordinates.py" />
+        <option value="$PROJECT_DIR$/JSON/params_correction.py" />
+        <option value="$PROJECT_DIR$/camera/camera.py" />
+        <option value="$PROJECT_DIR$/image/picture/qrcode.py" />
+        <option value="$PROJECT_DIR$/image/qrcode.py" />
+        <option value="$PROJECT_DIR$/JSON/medicine_plate.py" />
+        <option value="$PROJECT_DIR$/JSON/medicine_plate_info.py" />
+        <option value="$PROJECT_DIR$/JSON/data/coordinates_converter.json" />
+        <option value="$PROJECT_DIR$/JSON/coordinate_converter.py" />
+        <option value="$PROJECT_DIR$/check/ark_barrels.py" />
+        <option value="$PROJECT_DIR$/image/qr_code.py" />
+        <option value="$PROJECT_DIR$/JSON/data/ark_barrels_coordinates.json" />
+        <option value="$PROJECT_DIR$/JSON/ark_barrels_coordinates.py" />
+        <option value="$PROJECT_DIR$/check/panel_standard.py" />
+        <option value="$PROJECT_DIR$/test/prescription/new/prescription.py" />
+        <option value="$PROJECT_DIR$/test/yaodan_ni/new/prescription.py" />
+        <option value="$PROJECT_DIR$/image/camera.py" />
+        <option value="$PROJECT_DIR$/image/picture/video0/reader.py" />
+        <option value="$PROJECT_DIR$/motor/reset.py" />
+        <option value="$PROJECT_DIR$/motor/x1_drive.py" />
+        <option value="$PROJECT_DIR$/motor/lmr_drive.py" />
+        <option value="$PROJECT_DIR$/motor/z_drive.py" />
+        <option value="$PROJECT_DIR$/motor/y_drive.py" />
+        <option value="$PROJECT_DIR$/led/led_class.py" />
+        <option value="$PROJECT_DIR$/electromagnet/push_drug_drive.py" />
+        <option value="$PROJECT_DIR$/electromagnet/strike_drug_drive.py" />
+        <option value="$PROJECT_DIR$/GPIO/input.py" />
+        <option value="$PROJECT_DIR$/motor/go.py" />
+        <option value="$PROJECT_DIR$/motor/x_drive.py" />
+        <option value="$PROJECT_DIR$/GPIO/define.py" />
+        <option value="$PROJECT_DIR$/motor/y1_drive.py" />
+        <option value="$PROJECT_DIR$/medicine/plate.py" />
+        <option value="$PROJECT_DIR$/motor/备份/steering_engine_211213.py" />
+        <option value="$PROJECT_DIR$/motor/steering_engine_new.py" />
+        <option value="$PROJECT_DIR$/motor/steering_engine.py" />
+        <option value="$PROJECT_DIR$/medicine/drop.py" />
+        <option value="$PROJECT_DIR$/JSON/data/current_coordinates.json" />
+        <option value="$PROJECT_DIR$/medicine/bottle.py" />
+        <option value="$PROJECT_DIR$/JSON/data/params_correction.json" />
+        <option value="$PROJECT_DIR$/main_h.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesCSS</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>ReST</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>YAML</id>
+          </State>
+          <State>
+            <id>常规</id>
+          </State>
+          <State>
+            <id>控制流问题JavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Python</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="check" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="electromagnet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="GPIO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="JSON" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="medicine_plate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="led" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="medicine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="motor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspberry57_step_Motor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspberry57_step_Motor" type="462c0819:PsiDirectoryNode" />
+              <item name="motor" type="462c0819:PsiDirectoryNode" />
+              <item name="备份" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../easyrun" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/JSON" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="raspberry57_step_Motor" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="raspberry57_step_Motor" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份\历史文件" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\历史文件" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON\data" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\medicine\备份" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\备份" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\JSON" />
+      <recent name="D:\Users\user\PycharmProjects\raspberry57_step_Motor\check" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="raspberry57_step_Motor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DISPLAY" value="raspberrypi:10.0" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="steering_engine (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="raspberry57_step_Motor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/motor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motor/steering_engine.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="steering_engine" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="raspberry57_step_Motor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/motor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\steering_engine.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="steering_engine_211213" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="raspberry57_step_Motor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/motor/备份" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motor/备份/steering_engine_211213.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="steering_engine_new" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="raspberry57_step_Motor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/motor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\Users\user\PycharmProjects\raspberry57_step_Motor\motor\steering_engine.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.steering_engine" />
+      <item itemvalue="Python.steering_engine_211213" />
+      <item itemvalue="Python.steering_engine (1)" />
+      <item itemvalue="Python.steering_engine_new" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.steering_engine (1)" />
+        <item itemvalue="Python.steering_engine_new" />
+        <item itemvalue="Python.steering_engine" />
+        <item itemvalue="Python.steering_engine_211213" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\user\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="982f27f0-fef6-4d2a-ac79-c87102664adc" name="Default Changelist" comment="" />
+      <created>1545812965628</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545812965628</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Default Changelist">
+      <created>1619424738995</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619424738995</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Default Changelist">
+      <created>1620113825543</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620113825543</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Default Changelist">
+      <created>1620288019293</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620288019293</updated>
+    </task>
+    <task id="LOCAL-00004" summary="主分支-首次创建清晰地提交信息">
+      <created>1620288881364</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620288881364</updated>
+    </task>
+    <task id="LOCAL-00005" summary="功能分支-打药控制（准备、进行、退出）">
+      <created>1620700567558</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620700567558</updated>
+    </task>
+    <task id="LOCAL-00006" summary="开发分支-Dominguez负责">
+      <created>1620703919334</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620703919334</updated>
+    </task>
+    <task id="LOCAL-00007" summary="开发分支-Dominguez负责">
+      <created>1620704975844</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620704975844</updated>
+    </task>
+    <task id="LOCAL-00008" summary="修改推杆y值，和安全距离的y">
+      <created>1620705990293</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620705990293</updated>
+    </task>
+    <task id="LOCAL-00009" summary="打药，摇药测试ok">
+      <created>1621391770542</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621391770542</updated>
+    </task>
+    <task id="LOCAL-00010" summary="21-5-19 项目更新">
+      <created>1621392588859</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1621392588859</updated>
+    </task>
+    <task id="LOCAL-00011" summary="21-5-19 项目更新">
+      <created>1621393945474</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1621393945474</updated>
+    </task>
+    <task id="LOCAL-00012" summary="掉药功能创建">
+      <created>1621411264976</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1621411264977</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4942748" weight="0.21581769" />
+      <window_info id="Structure" order="1" sideWeight="0.5057252" side_tool="true" weight="0.22453083" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.5050215" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4960443" visible="true" weight="0.3773314" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39904422" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49798927" weight="0.256447" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5039557" side_tool="true" weight="0.35532233" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49731904" weight="0.2688822" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32281205" />
+      <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.49693668" weight="0.28837878" />
+      <window_info anchor="bottom" id="调试" order="14" weight="0.30129126" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" auto_hide="true" id="SciView" order="3" show_stripe_button="false" type="FLOATING" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32959184" />
+      <window_info anchor="right" x="2341" y="-35" width="487" height="431" id="文档" order="7" sideWeight="0.5014881" side_tool="true" visible="true" weight="0.14142092" />
+      <window_info anchor="right" id="Remote Host" order="8" sideWeight="0.4985119" weight="0.3297587" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Default Changelist" />
+    <MESSAGE value="主分支-首次创建清晰地提交信息" />
+    <MESSAGE value="功能分支-打药控制（准备、进行、退出）" />
+    <MESSAGE value="开发分支-Dominguez负责" />
+    <MESSAGE value="修改推杆y值，和安全距离的y" />
+    <MESSAGE value="打药，摇药测试ok" />
+    <MESSAGE value="21-5-19 项目更新" />
+    <MESSAGE value="掉药功能创建" />
+    <option name="LAST_COMMIT_MESSAGE" value="掉药功能创建" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/check/ark_barrels.py</url>
+          <line>397</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/check/ark_barrels.py</url>
+          <line>385</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/z_drive.py</url>
+          <line>193</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>300</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>301</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>302</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>276</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>278</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/y_drive.py</url>
+          <line>187</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/y_drive.py</url>
+          <line>190</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>411</line>
+          <option name="timeStamp" value="226" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>415</line>
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>422</line>
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>426</line>
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>430</line>
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>403</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>392</line>
+          <option name="timeStamp" value="233" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>268</line>
+          <option name="timeStamp" value="237" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>271</line>
+          <option name="timeStamp" value="239" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/y_drive.py</url>
+          <line>182</line>
+          <option name="timeStamp" value="247" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/y_drive.py</url>
+          <line>179</line>
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/take_picture.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="255" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="257" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="260" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="261" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/jump.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>267</line>
+          <option name="timeStamp" value="263" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/electromagnet/strike_drug_drive.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/electromagnet/strike_drug_drive.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/electromagnet/strike_drug_drive.py</url>
+          <line>109</line>
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/electromagnet/strike_drug_drive.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>260</line>
+          <option name="timeStamp" value="297" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>791</line>
+          <option name="timeStamp" value="298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>794</line>
+          <option name="timeStamp" value="299" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>806</line>
+          <option name="timeStamp" value="300" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>809</line>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>812</line>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>818</line>
+          <option name="timeStamp" value="303" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>822</line>
+          <option name="timeStamp" value="304" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>815</line>
+          <option name="timeStamp" value="305" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/x1_drive.py</url>
+          <line>181</line>
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/x1_drive.py</url>
+          <line>186</line>
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>906</line>
+          <option name="timeStamp" value="314" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>912</line>
+          <option name="timeStamp" value="315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>898</line>
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>909</line>
+          <option name="timeStamp" value="318" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>245</line>
+          <option name="timeStamp" value="321" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>247</line>
+          <option name="timeStamp" value="322" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>249</line>
+          <option name="timeStamp" value="323" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>251</line>
+          <option name="timeStamp" value="324" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>243</line>
+          <option name="timeStamp" value="325" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>399</line>
+          <option name="timeStamp" value="331" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>396</line>
+          <option name="timeStamp" value="332" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/pulse_width_arithmetic.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="343" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/x_drive.py</url>
+          <line>199</line>
+          <option name="timeStamp" value="364" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/x_drive.py</url>
+          <line>205</line>
+          <option name="timeStamp" value="365" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/y1_drive.py</url>
+          <line>229</line>
+          <option name="timeStamp" value="366" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/y1_drive.py</url>
+          <line>234</line>
+          <option name="timeStamp" value="367" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>196</line>
+          <option name="timeStamp" value="373" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>363</line>
+          <option name="timeStamp" value="375" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>566</line>
+          <option name="timeStamp" value="386" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>621</line>
+          <option name="timeStamp" value="392" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>325</line>
+          <option name="timeStamp" value="397" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>337</line>
+          <option name="timeStamp" value="398" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>351</line>
+          <option name="timeStamp" value="399" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>356</line>
+          <option name="timeStamp" value="400" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>362</line>
+          <option name="timeStamp" value="401" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>372</line>
+          <option name="timeStamp" value="402" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>393</line>
+          <option name="timeStamp" value="403" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>398</line>
+          <option name="timeStamp" value="404" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>402</line>
+          <option name="timeStamp" value="405" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>417</line>
+          <option name="timeStamp" value="406" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>310</line>
+          <option name="timeStamp" value="410" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>125</line>
+          <option name="timeStamp" value="419" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="420" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>561</line>
+          <option name="timeStamp" value="421" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>578</line>
+          <option name="timeStamp" value="422" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>598</line>
+          <option name="timeStamp" value="423" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>606</line>
+          <option name="timeStamp" value="424" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>611</line>
+          <option name="timeStamp" value="425" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>786</line>
+          <option name="timeStamp" value="429" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>780</line>
+          <option name="timeStamp" value="430" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>770</line>
+          <option name="timeStamp" value="431" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>893</line>
+          <option name="timeStamp" value="432" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>901</line>
+          <option name="timeStamp" value="433" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>906</line>
+          <option name="timeStamp" value="434" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/drop.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="436" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/drop.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="437" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/lmr_drive.py</url>
+          <line>181</line>
+          <option name="timeStamp" value="439" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/lmr_drive.py</url>
+          <line>177</line>
+          <option name="timeStamp" value="440" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/plate.py</url>
+          <line>872</line>
+          <option name="timeStamp" value="442" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>370</line>
+          <option name="timeStamp" value="456" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>374</line>
+          <option name="timeStamp" value="457" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>378</line>
+          <option name="timeStamp" value="458" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>382</line>
+          <option name="timeStamp" value="459" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/motor/go.py</url>
+          <line>387</line>
+          <option name="timeStamp" value="460" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle_capsule.py</url>
+          <line>459</line>
+          <option name="timeStamp" value="467" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>624</line>
+          <option name="timeStamp" value="468" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/medicine/bottle.py</url>
+          <line>585</line>
+          <option name="timeStamp" value="470" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/check/ark_barrels.py</url>
+          <line>362</line>
+          <option name="timeStamp" value="471" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/check/ark_barrels.py</url>
+          <line>358</line>
+          <option name="timeStamp" value="472" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/check/panel_standard.py</url>
+          <line>284</line>
+          <option name="timeStamp" value="474" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/check/panel_standard.py</url>
+          <line>339</line>
+          <option name="timeStamp" value="475" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/check/panel_standard.py</url>
+          <line>439</line>
+          <option name="timeStamp" value="476" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/image/qr_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4312">
+          <caret line="167" column="30" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check/panel_standard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11872">
+          <caret line="443" selection-start-line="443" selection-end-line="443" />
+          <folding>
+            <marker date="1634120619551" expanded="true" signature="7318:8406" ph="..." />
+            <marker date="1634120619551" expanded="true" signature="8806:8812" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/coordinate_converter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7728">
+          <caret line="278" selection-start-line="278" selection-end-line="278" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/ark_barrels_coordinates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3472">
+          <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
+          <folding>
+            <element signature="e#357#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check/ark_barrels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="314" column="4" selection-start-line="314" selection-start-column="4" selection-end-line="314" selection-end-column="4" />
+          <folding>
+            <marker date="1634008163599" expanded="true" signature="1722:9516" ph="..." />
+            <marker date="1634008163599" expanded="true" signature="9598:11678" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydev_ipython/matplotlibtools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/-1969707174/201545292/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="2022" selection-start-line="2022" selection-end-line="2022" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://Q:/药嘴/test2.py" />
+    <entry file="file://$PROJECT_DIR$/image/camera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4312">
+          <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
+          <folding>
+            <marker date="1634969394573" expanded="true" signature="12076:12079" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/picture/video0/reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/picture/video0/push_out_ready_check_cut.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/take_picture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2184">
+          <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <folding>
+            <element signature="e#266#320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Desktop/Servo_Driver_HAT/Raspberry Pi/python3/PCA9685.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="41" column="10" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1456">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/data/constant_coordinates.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/data/ark_barrels_coordinates.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1932">
+          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/data/coordinates_converter.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check/xyz_check_test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/lmr_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding>
+            <element signature="e#432#455#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/z_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="e#485#508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/led/led_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <folding>
+            <element signature="e#262#273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electromagnet/push_drug_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding>
+            <element signature="e#282#305#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPIO/motor.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1969707174/cv2/cv2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1568">
+          <caret line="6035" column="4" selection-start-line="6035" selection-start-column="4" selection-end-line="6035" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electromagnet/strike_drug_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPIO/input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2636">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="e#278#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/x_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4252">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#490#513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/reset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5902">
+          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+          <folding>
+            <element signature="e#451#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/y_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="139" column="4" lean-forward="true" selection-start-line="139" selection-start-column="4" selection-end-line="145" selection-end-column="34" />
+          <folding>
+            <element signature="e#487#510#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/x1_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding>
+            <element signature="e#606#629#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/camera_0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="183" column="44" lean-forward="true" selection-start-line="183" selection-start-column="44" selection-end-line="183" selection-end-column="44" />
+          <folding>
+            <element signature="e#261#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/go.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="268" column="27" selection-start-line="268" selection-start-column="8" selection-end-line="268" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/y1_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5701">
+          <caret line="226" column="17" lean-forward="true" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+          <folding>
+            <element signature="e#520#543#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/current_coordinates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPIO/define.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/备份/steering_engine_211213.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1969707174/RPi/_GPIO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="178" column="49" selection-start-line="178" selection-start-column="49" selection-end-line="178" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/steering_engine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/-1969707174/1992186930/motor/go.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="789">
+          <caret line="77" column="77" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/备份/drop_211213.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="126" column="8" lean-forward="true" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motor/steering_engine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="162" column="14" lean-forward="true" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
+          <folding>
+            <element signature="e#307#330#0" expanded="true" />
+            <marker date="1639381181817" expanded="true" signature="673:2846" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/medicine_plate/6924168200093.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/medicine_plate/6921314097279.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/drop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <element signature="e#321#332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/plate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12496">
+          <caret line="923" column="4" selection-start-line="923" selection-start-column="4" selection-end-line="923" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#363#463#1" />
+            <element signature="e#1005#1108#0" />
+            <element signature="e#1535#2513#0" />
+            <element signature="e#1535#1972#1" />
+            <element signature="e#2306#2341#0" />
+            <element signature="e#2406#2473#0" />
+            <element signature="e#2555#3293#0" />
+            <element signature="e#2555#2779#1" />
+            <element signature="e#2784#2804#0" />
+            <element signature="e#2825#2926#1" />
+            <element signature="e#3036#3044#0" />
+            <element signature="e#3382#4761#0" />
+            <element signature="e#3382#3870#1" />
+            <element signature="e#4169#4515#0" />
+            <element signature="e#4421#4429#0" />
+            <element signature="e#4534#4709#0" />
+            <element signature="e#4837#5698#0" />
+            <element signature="e#4837#5269#1" />
+            <element signature="e#5561#5569#0" />
+            <element signature="e#5753#6755#0" />
+            <element signature="e#5753#6021#1" />
+            <element signature="e#6113#6125#0" />
+            <element signature="e#6785#6955#0" />
+            <element signature="e#6785#6875#1" />
+            <element signature="e#6980#7200#0" />
+            <element signature="e#6980#7016#1" />
+            <element signature="e#7259#7485#1" />
+            <element signature="e#7723#7833#0" />
+            <element signature="e#8091#8099#0" />
+            <element signature="e#8702#8745#0" />
+            <element signature="e#8986#9011#0" />
+            <element signature="e#9478#9500#0" />
+            <element signature="e#9542#9634#1" />
+            <element signature="e#10336#10357#0" />
+            <element signature="e#10668#10673#0" />
+            <element signature="e#11354#11382#0" />
+            <element signature="e#12041#12074#0" />
+            <element signature="e#13522#13690#1" />
+            <element signature="e#13937#14047#0" />
+            <element signature="e#14695#14735#0" />
+            <element signature="e#15149#15161#0" />
+            <element signature="e#15251#15259#0" />
+            <element signature="e#15684#15692#0" />
+            <element signature="e#16160#16176#0" />
+            <element signature="e#16413#16423#0" />
+            <element signature="e#16663#16679#0" />
+            <element signature="e#16777#16785#0" />
+            <element signature="e#17141#17149#0" />
+            <element signature="e#17265#18049#0" />
+            <element signature="e#17265#17287#1" />
+            <element signature="e#18099#18313#1" />
+            <element signature="e#18361#18383#0" />
+            <element signature="e#18852#18878#0" />
+            <element signature="e#19287#19308#0" />
+            <element signature="e#19386#19400#0" />
+            <element signature="e#19759#19786#0" />
+            <element signature="e#20188#20213#0" />
+            <element signature="e#20770#22240#0" />
+            <element signature="e#20770#20904#1" />
+            <element signature="e#21057#21167#0" />
+            <element signature="e#21663#21689#0" />
+            <element signature="e#22098#22107#0" />
+            <element signature="e#22324#22700#1" />
+            <element signature="e#22705#22808#0" />
+            <element signature="e#23010#23133#1" />
+            <element signature="e#23138#23149#0" />
+            <element signature="e#23221#23243#0" />
+            <element signature="e#23670#24764#0" />
+            <element signature="e#23670#23678#0" />
+            <element signature="e#23760#23860#0" />
+            <element signature="e#23895#23994#0" />
+            <element signature="e#24413#24764#0" />
+            <element signature="e#24456#24764#0" />
+            <element signature="e#24544#24669#0" />
+            <element signature="e#24720#24764#0" />
+            <element signature="e#24920#25180#0" />
+            <element signature="e#24990#25097#0" />
+            <element signature="e#25140#25180#0" />
+            <element signature="e#26694#27047#1" />
+            <element signature="e#27052#27155#0" />
+            <element signature="e#27291#27401#0" />
+            <element signature="e#27793#28264#0" />
+            <element signature="e#27793#27820#1" />
+            <element signature="e#28588#28676#0" />
+            <element signature="e#28775#28987#0" />
+            <element signature="e#28950#28987#0" />
+            <marker date="1639037519395" expanded="true" signature="12528:14854" ph="..." />
+            <marker date="1639037519395" expanded="true" signature="29920:29925" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/bottle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+          <folding>
+            <element signature="e#258#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_h.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/data/params_correction.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JSON/data/current_coordinates.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#273#286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.296" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -4,25 +4,23 @@
   "width":68.8,
   "agg_thickness":7.7,
   "thickness":0.3,
+  "num":18,
   "medicine_distribution":{
     "regularity":1,
     "center":{
+      "narrow_side":[11, 9.5],
+      "broad_side":[10, 15],
       "x_sum":4,
       "x_distance":16.2,
       "y_sum":6,
-      "y_distance":16.2
+      "y_distance":16.2,
+      "list":[[11, 9.5], [10, 15]]
     }
   },
   "ark_barrels":{
     "x":{
       "num_center":1,
       "center_deviation":4.5
-    },
-    "y":{
-      "backboard":104.8
-    },
-    "z":{
-      "baseboard":8.55
     }
   }
 }

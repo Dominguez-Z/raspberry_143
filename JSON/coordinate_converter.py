@@ -160,6 +160,75 @@ def body_tong(key):
     return current_coordinates_key
 
 
+def body_drop_channel():
+    """
+    将motor坐标转化为 主体药物掉落通道口 的空间坐标[x, y, z]
+
+    Returns
+    -------
+    return
+        current_coordinates_body_drop_channel - [x, y, z]
+        "x" : 出药口的中心线坐标
+        "y" : 出药斜台y方向前边沿
+        "z" : 出药斜台往下斜约30度时，前边沿的z高度
+    """
+    # 获取当前各轴的轴坐标
+    current_coordinates_motor = list()
+    current_coordinates_motor.append(current_coordinates.get('motor_x'))
+    current_coordinates_motor.append(current_coordinates.get('motor_y'))
+    current_coordinates_motor.append(current_coordinates.get('motor_z'))
+    # 获取主体出药口的修正数据
+    drop_channel = get("body", "drop_channel")
+    # 电机轴坐标 + 出药口的修正数据 = 整机坐标系的出药口坐标
+    if len(current_coordinates_motor) == len(drop_channel):
+        current_coordinates_body_drop_channel = []
+        for i in range(len(drop_channel)):
+            current_coordinates_body_drop_channel_1 = current_coordinates_motor[i] + drop_channel[i]
+            current_coordinates_body_drop_channel.append(current_coordinates_body_drop_channel_1)
+    else:
+        print("坐标长度不对，请检查")
+        return
+    return current_coordinates_body_drop_channel
+
+
+def camera(num=None):
+    """
+    将motor坐标转化为 对应摄像头 的空间坐标[x, y, z]
+
+    Parameters
+    ----------
+    num
+        摄像头编号，1：正对下，照药板和药瓶嘴；2：正对前，照柜桶。
+
+    Returns
+    -------
+    return
+        body_camera - [x, y, z]，摄像头孔的空间坐标，辅助对准拍照部位
+    """
+    # 如果没有指定摄像头返回失败
+    if not num:
+        print("未指定摄像头编号，无法获取当前坐标")
+        return False
+
+    # 获取当前各轴的轴坐标
+    current_coordinates_motor = list()
+    current_coordinates_motor.append(current_coordinates.get('motor_x'))
+    current_coordinates_motor.append(current_coordinates.get('motor_y'))
+    current_coordinates_motor.append(current_coordinates.get('motor_z'))
+    # 获取主体出药口的修正数据
+    camera_num = get("body", "camera", str(num))
+    # 电机轴坐标 + 出药口的修正数据 = 整机坐标系的出药口坐标
+    if len(current_coordinates_motor) == len(camera_num):
+        current_coordinates_camera = []
+        for i in range(len(camera_num)):
+            current_coordinates_camera_1 = current_coordinates_motor[i] + camera_num[i]
+            current_coordinates_camera.append(current_coordinates_camera_1)
+    else:
+        print("坐标长度不对，请检查")
+        return
+    return current_coordinates_camera
+
+
 def body(key):
     """
     将motor坐标转化为 主体 的指定位置坐标
@@ -206,7 +275,7 @@ def setup():
 
 # 循环部分
 def main():
-    print(body_push_rod("the_bottom"))
+    print(camera(2))
 
 
 # 结束释放

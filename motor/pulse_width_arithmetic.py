@@ -123,7 +123,7 @@ def generate(
         # 添加 [转速，持续脉冲数]
         rpm_step_state.append([rpm_step_now, pulwid_num])
         rpm_step_now += acc_step_rpm
-    print("rpm持续列表为：\n %s" % rpm_step_state)
+    # print("rpm持续列表为：\n %s" % rpm_step_state)
 
     # 记录变速阶段跳变中，每一个rpm最后的脉冲数[change_point, rpm]
     rpm_change_point = []
@@ -131,11 +131,11 @@ def generate(
     for i in range(len(rpm_step_state)):
         change_point += rpm_step_state[i][1]
         rpm_change_point. append([change_point, rpm_step_state[i][0]])
-    print("变速阶段跳变转换点：\n %s" % rpm_change_point)
-    print("135：脉冲变化次数：%s" % len(rpm_change_point))
+    # print("变速阶段跳变转换点：\n %s" % rpm_change_point)
+    # print("135：脉冲变化次数：%s" % len(rpm_change_point))
     # rpm转化us
     pulse_width_change_point = [[i[0], rpm_2_pulwid(i[1], pulse_rev)] for i in rpm_change_point]
-    print("脉冲宽度变速阶段跳变转换点：\n %s" % pulse_width_change_point)
+    # print("脉冲宽度变速阶段跳变转换点：\n %s" % pulse_width_change_point)
 
     rpm_math_list = []                  # 创建一个记录转速的列表
 

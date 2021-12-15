@@ -17,22 +17,41 @@ import motor.x_drive as x
 import motor.z_drive as z
 import motor.x1_drive as x1
 import motor.y1_drive as y1
+import electromagnet.push_drug_drive as push
+import image.camera_0 as camera_0
+import image.camera as camera
 import time
 import numpy as np
+import cv2
+import wiringpi
 
 
 # ############################ 常数值设定区域 ############################
+# 测试记号
+cv2_imwrite = 1
+
+# push_out_ready_check()
+CUT_Y1 = 1425
+CUT_Y2 = 1600
+CUT_X1 = 1200
+CUT_X2 = 1520
+
 # push_out()
-TAKE_MEDICINE_ANGLE_SLIP = -50          # 设定抬高出药口滑出药物时候的角度
-TAKE_MEDICINE_TIME_SLIP = 0.7           # 设定出药延迟，使得药物有足够时间滑出至出药位
-TAKE_MEDICINE_TIME_PUSH = 0.5           # 设定顶药后的延时
+ANGLE_SLIP_BUFFER = [-30, -35, -40]         # 摇药设置缓冲角度，让药初步离开药瓶口
+TAKE_MEDICINE_ANGLE_SLIP = -51              # 设定抬高出药口滑出药物时候的角度
+TAKE_MEDICINE_TIME_SLIP_BUFFER = 0.5        # 设定出药缓冲延迟
+TAKE_MEDICINE_TIME_SLIP = 0.7               # 设定出药延迟，使得药物有足够时间滑出至出药位
+TAKE_MEDICINE_TIME_PUSH = 0.5               # 设定顶药后的延时
+RPM_SLIP_BUFFER = [10, 10, 10]
+RPM_SLIP = [16, 18, 20]
 
 # push_out()、take_medicine()
-TAKE_MEDICINE_ANGLE_PUSH_OUT = -40      # 设定降低出药口将药物顶出的角度
+TAKE_MEDICINE_ANGLE_PUSH_OUT = -57      # 设定降低出药口将药物顶出的角度
+RPM_PUSH_OUT = 15
 
 # take_medicine()
-COUNT_CHECK_MAX = 50                     # 设定检查出药口准备药物情况的最大次数
-BACK_MEDICINE_ANGLE = 60                # 设定回药的角度，使得药物回到瓶口附近但未回到瓶内
+COUNT_CHECK_MAX = 3                     # 设定检查出药口准备药物情况的最大次数
+BACK_MEDICINE_ANGLE = 90                # 设定回药的角度，使得药物回到瓶口附近但未回到瓶内
 # ########################################################################
 
 
@@ -83,9 +102,14 @@ angle_z = {
     "-33": 6.26,
     "-35": 6.7,
     "-40": 7.7,
+    "-42": 8.1,
     "-45": 8.7,
     "-50": 9.7,
+    "-51": 10,
+    "-54": 10.5,
     "-55": 10.7,
+    "-56": 11,
+    "-57": 11.5,            # 实验
     "-60": 11.7,
     "-65": 12.7
 }
@@ -96,8 +120,17 @@ angle_z = {
 # y轴坐标关注点是 推杆最前面
 # z轴坐标关注点是 推杆上表面
 # ########################################################################
-# 1、正->正，只动y轴
 def turn_y(angle):
+    """
+    1、正->正，只动y轴
+
+    Parameters
+    ----------
+    angle
+        目标角度
+
+    """
+    global angle_current
     # 1、根据角度计算y轴目标坐标
     # 目标y坐标 = 准备点y坐标 + 目标角度对应偏移量
     target_y = ready_point[1] + angle_y.get(str(angle))
@@ -107,14 +140,24 @@ def turn_y(angle):
     go.only_y(the_front_body_push_rod, target_y)
     time.sleep(0.1)
     # 4、更新目前角度
-    global angle_current
     angle_current = angle
     # 5、运动结束，返回函数
     return
 
 
-# 2、正->负，先动y轴，再动z轴
-def turn_y_z(angle):
+def turn_y_z(angle, rpm_z=None):
+    """
+    2、正->负，先动y轴，再动z轴
+
+    Parameters
+    ----------
+    angle
+        目标角度
+    rpm_z
+        z轴移动速度，控制转动速度
+
+    """
+    global angle_current
     # 1、先运动y轴到零度位置
     #   1.1 根据y轴零度角度计算y轴目标坐标
     #   目标y坐标 = 准备点y坐标 + y轴零度对应偏移量
@@ -132,36 +175,68 @@ def turn_y_z(angle):
     #   2.2 获取当前z轴坐标
     the_top_body_push_rod = coordinate_converter.body_push_rod("the_top")
     #   2.3 执行z轴控制
-    go.only_z(the_top_body_push_rod, target_z, 8)
+    print("\n")
+    print("############ y_z ############")
+    print("准备点z坐标：%s，目标角度对应偏移量：%s" %
+          (ready_point[2], angle_z.get(str(angle))))
+    print("z轴目前坐标：%s，目标坐标：%s。" % (the_top_body_push_rod, target_z))
+    print("############ y_z ############")
+    print("\n")
+    go.only_z(the_top_body_push_rod, target_z, rpm_z)
     time.sleep(0.1)
 
     # 3、更新目前角度
-    global angle_current
     angle_current = angle
 
     # 4、完成控制，返回函数
     return
 
 
-# 3、负->负，只动z轴
-def turn_z(angle):
+def turn_z(angle, rpm_z=None):
+    """
+    3、负->负，只动z轴
+
+    Parameters
+    ----------
+    angle
+        目标角度
+    rpm_z
+        z轴移动速度，控制转动速度
+
+    """
+    global angle_current
     # 1、根据角度计算z轴目标坐标
     # 目标z坐标 = 准备点z坐标 + 目标角度对应偏移量
     target_z = ready_point[2] + angle_z.get(str(angle))
     # 2、获取当前z轴坐标
     the_top_body_push_rod = coordinate_converter.body_push_rod("the_top")
     # 3、执行z轴控制
-    go.only_z(the_top_body_push_rod, target_z, 10)
+    print("\n")
+    print("############ z ############")
+    print("准备点z坐标：%s，目标角度对应偏移量：%s" %
+          (ready_point[2], angle_z.get(str(angle))))
+    print("z轴目前坐标：%s，目标坐标：%s。" % (the_top_body_push_rod, target_z))
+    print("############ z ############")
+    print("\n")
+    go.only_z(the_top_body_push_rod, target_z, rpm_z)
     time.sleep(0.1)
     # 4、更新目前角度
-    global angle_current
     angle_current = angle
     # 5、运动结束，返回函数
     return
 
 
-# 4、负->正，先动z轴，再动y轴
 def turn_z_y(angle):
+    """
+    4、负->正，先动z轴，再动y轴
+
+    Parameters
+    ----------
+    angle
+        目标角度
+
+    """
+    global angle_current
     # 1、先运动z轴到零度位置
     #   1.1 根据z轴零度角度计算z轴目标坐标
     #   目标z坐标 = 准备点z坐标 + z轴零度对应偏移量
@@ -169,6 +244,13 @@ def turn_z_y(angle):
     #   1.2 获取当前z轴坐标
     the_top_body_push_rod = coordinate_converter.body_push_rod("the_top")
     #   1.3 执行y轴运动
+    print("\n")
+    print("############ z_y ############")
+    print("准备点z坐标：%s，目标角度对应偏移量：%s" %
+          (ready_point[2], angle_z.get("-0")))
+    print("z轴目前坐标：%s，目标坐标：%s。" % (the_top_body_push_rod, target_z))
+    print("############ z_y ############")
+    print("\n")
     go.only_z(the_top_body_push_rod, target_z)
     time.sleep(0.1)
 
@@ -183,14 +265,13 @@ def turn_z_y(angle):
     time.sleep(0.1)
 
     # 3、更新目前角度
-    global angle_current
     angle_current = angle
 
     # 4、完成控制，返回函数
     return
 
 
-def turn_to(angle):
+def turn_to(angle, rpm_z=None):
     """
     实现转动到指定角度
 
@@ -198,6 +279,8 @@ def turn_to(angle):
     ----------
     angle
         目标角度，范围是90到-60，出药管道水平设定为0度
+    rpm_z
+        z轴移动速度，控制转动速度,只有正->负，和负->负的时候可以指定，其他时候指定无效
 
     """
     # 1、判断输入的角度是否正确
@@ -213,11 +296,11 @@ def turn_to(angle):
     #   2.2 当前角度和目标角度都小于零，只动z轴
     elif (angle_current <= 0) and (angle <= 0):
         print("只动z轴")
-        turn_z(angle)
+        turn_z(angle, rpm_z)
     #   2.3 当前角度大于零，目标角度小于零，先动y轴再动z轴
     elif (angle_current >= 0) and (angle <= 0):
         print("先动y轴再动z轴")
-        turn_y_z(angle)
+        turn_y_z(angle, rpm_z)
     #   2.4 当前角度小于零，目标角度大于零，先动z轴再动y轴
     elif (angle_current <= 0) and (angle >= 0):
         print("先动z轴再动y轴")
@@ -233,53 +316,227 @@ def turn_to(angle):
 def push_out():
     """
     当药片到达出口处，调用该函数实现出一粒药
+    并在顶出药的阶段拍照识别是否正常顶出
+
+    Returns
+    -------
+    push_out_state - "succeed"，成功出药；"fail",出药不成功
+    """
+
+    # 1、启动继电器撞击药
+    push.do(0.6)
+
+    # 2、拍照识别
+    # 拍照，并获取照片的绝对路径
+    # picture_camera_path = camera_0.take_photo("push_out")
+    # img = cv2.imread(picture_camera_path)
+    # cv2.namedWindow("img1", cv2.WINDOW_NORMAL)
+    # cv2.imshow("img1", img)
+    # img = img[720:820, 690:700]
+    # gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # ret, thresh = cv2.threshold(gray_image, 220, 255, cv2.THRESH_BINARY_INV)
+    #
+    # binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    # i = len(contours)
+    # cv2.imshow("img2", img)
+    # cv2.imshow("gray_image", gray_image)
+    # cv2.imshow("thresh", thresh)
+    # cv2.waitKey(0)
+    #
+    # cv2.destroyAllWindows()
+    # print("push_out识别结果，i = %s" % i)
+    # time.sleep(TAKE_MEDICINE_TIME_PUSH)
+
+    # 默认有就能出
+    i = 1
+
+    # 4、根据识别结果，返回状态
+    if i == 1:
+        return "succeed"
+    else:
+        return 'fail'
+
+
+def hsv_img(img, picture_dir_path, debug=False):
+    """
+    识别方法采用颜色空间，判断所选颜色的占比判断是否有药片
+
+    Parameters
+    ----------
+    img_c
+        要识别的图片，完整的3264x2448
+    picture_dir_path
+        图片的目录
+    debug
+        debug模式开启
+
+    Returns
+    -------
+    [返回]
+        识别结果，有则yes，无则no
+    """
+    # 新方案传递过来的是已切片的图片
+    # img = img_c[1425:1600, 1200:1520]
+    # cv2.imwrite(picture_dir_path + "img_cut.jpg", img)
+    # cv2.imshow('test', img)
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    if debug:
+        cv2.imshow('HSV', hsv)
+    lower = np.array([0, 0, 221])
+    upper = np.array([180, 30, 255])
+    # lower = np.array([0, 10, 30])
+    # upper = np.array([160, 255, 120])
+    mask = cv2.inRange(hsv, lower, upper)
+    img = cv2.bitwise_or(img, img, mask=mask)
+    if debug:
+        cv2.imshow('mask', mask)
+        cv2.imshow('hsv_masked', img)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    if debug:
+        cv2.imshow('GRAY', img)
+    # binary, contours, hierarchy = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)   # 返回三个参数
+    contours, hierarchy = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    # print(len(contours))
+
+    result = 0
+    num = 0
+    for i in range(0, len(contours)):
+        cnt = contours[i]
+        area = cv2.contourArea(cnt)
+        # 判断闭合白色块的像素数量大于一定值时才被认定为时药粒
+        if area > 500:
+            x0, y0, w, h = cv2.boundingRect(contours[i])
+            # 增加一层判断确保识别出有药的区域在推药的位置，避免药没有到位却顶了认为出药了
+            if (x0 + w) > 240:
+                cv2.rectangle(img, (x0, y0), (x0 + w, y0 + h), (153, 153, 0), 5)
+                result = 1
+            num += 1
+
+    if cv2_imwrite:
+        cv2.imwrite(picture_dir_path + "/hsv_result.jpg", img)
+    if debug:
+        cv2.imshow('out', img)
+        cv2.waitKey(0)
+    print("结果是识别到：%s" % num)
+    return 'yes' if result == 1 else 'no'
+
+
+def find_contours_img(img_c, picture_dir_path):
+    """
+    识别方法采用二值化，获取白色的区域数量判断是否有药
+
+    Parameters
+    ----------
+    img_c
+        要识别的图片，完整的3264x2448
+    picture_dir_path
+        图片的目录
+
+    Returns
+    -------
+    [返回]
+        识别结果，有则yes，无则no
+    """
+    img = img_c[735:788, 554:564]
+    gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(gray_image, 220, 255, cv2.THRESH_BINARY_INV)
+
+    binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    i = len(contours)
+    # cv2.imshow("img2", img)
+    # cv2.imshow("gray_image", gray_image)
+    # cv2.imshow("thresh", thresh)
+
+    cv2.imwrite(picture_dir_path + "gray_image.jpg", gray_image)
+    cv2.imwrite(picture_dir_path + "thresh.jpg", thresh)
+    # cv2.waitKey(0)
+
+    # cv2.destroyAllWindows()
+    print("push_out_ready_check识别结果，i = %s" % i)
+    if i == 2:
+        return 'yes'
+    else:
+        return 'no'
+    # elif i == 1:
+    #     return 'no'
+    # else:
+    #     print("图像识别有误")
+    #     return 'error'
+
+
+def push_out_ready_check(video_bottle):
+    """
+    出药前检查是否有药准备好
+
+    Parameters
+    ----------
+    video_bottle
+        已创建好的摄像头实例
+
+    Returns
+    -------
+    Return
+        "yes"-有药，
+        "no"-无药，
+        "error"-判断出错。
+    """
+    # 拍照，并获取相册的绝对路径
+    cut_range = [CUT_Y1, CUT_Y2, CUT_X1, CUT_X2]
+    # img, picture_dir_path = camera_0.take_photo(picture_name="push_out_ready_check",
+    #                                             cut_range=cut_range,
+    #                                             focus_absolute=camera_0.FOCUS_ABSOLUTE_BOTTLE)
+    img, picture_dir_path = video_bottle.take_photo(picture_name="push_out_ready_check",
+                                                    resolution=camera.RESOLUTION_BOTTLE,
+                                                    cut_range=cut_range)
+    # picture_dir_path = picture_camera_path.replace("push_out_ready_check.jpg", "", 1)
+    print(picture_dir_path)
+    # img = cv2.imread(picture_camera_path)
+    # cv2.namedWindow("img1", cv2.WINDOW_NORMAL)
+    # cv2.imshow("img1", img)
+
+    result = hsv_img(img, picture_dir_path)
+    return result
+
+
+def photo_time():
+    """
+    测试拍照需要的时间
+
+    Returns
+    -------
 
     """
-    # 1、旋转加大角度使得出药口抬高，让出位置让药滑倒出药位
-    turn_to(TAKE_MEDICINE_ANGLE_SLIP)
-    time.sleep(TAKE_MEDICINE_TIME_SLIP)
-    # 2、减小角度轴使得出药口下降，让顶针顶出药物
-    turn_to(TAKE_MEDICINE_ANGLE_PUSH_OUT)
-    time.sleep(TAKE_MEDICINE_TIME_PUSH)
-    # 3、出一粒药完成，返回函数
+    t1 = wiringpi.micros()
+    t1 = wiringpi.micros()
+    cut_range = [CUT_Y1, CUT_Y2, CUT_X1, CUT_X2]
+    picture_camera_path = camera_0.take_photo(picture_name="photo_time",
+                                              cut_range=cut_range,
+                                              focus_absolute=camera_0.FOCUS_ABSOLUTE_BOTTLE)
+    t2 = wiringpi.micros()
+    print("拍照占用的时间是%s" % (t2 - t1))
     return
 
 
-# ############################### 函数说明 ###############################
-# 出药前检查是否有药准备好
-# ########################################################################
-def push_out_ready_check():
-    # 目前是测试阶段，通过键盘输入 y/n 代替摄像头判断
-    while True:
-        # 1、接受输入 y/n
-        ready_state = input("是否有药准备好出药，是：y；否：n。\n")
-        if ready_state == 'y':
-            return 'yes'
-        elif ready_state == 'n':
-            return 'no'
-        else:
-            print("输入有误，注意有药准备好了输入 y，否则输入 n")
-            return 'error'
+def turn_to_ready_check(mode=None):
+    """
+    摇药出来的动作，依据指定的不同模式进行不同控制
+
+    Parameters
+    ----------
+    mode
+        模式，SLIP_BUFFER的角度根据瓶内药的数量分为3个级别。
+        数量越多，药越满，角度越小。
+        SLIP_BUFFER[0]角度最小，[2]最大
+
+    """
+    turn_to(ANGLE_SLIP_BUFFER[mode], RPM_SLIP_BUFFER[mode])
+    time.sleep(TAKE_MEDICINE_TIME_SLIP_BUFFER)
+    turn_to(TAKE_MEDICINE_ANGLE_SLIP, RPM_SLIP[mode])
+    time.sleep(TAKE_MEDICINE_TIME_SLIP)
+    return
 
 
-# ############################### 函数说明 ###############################
-# 出药数量是否达到要求
-# ########################################################################
-def push_out_finish_check():
-    # 目前是测试阶段，通过键盘输入 y/n 代替摄像头判断
-    while True:
-        # 1、接受输入 y/n
-        finish_state = input("是否有出药，是：y；否：n。\n")
-        if finish_state == 'y':
-            num_medicine = int(input("成功出来的药物数量是多少，输入数字：\n"))
-            return 'yes', num_medicine
-        elif finish_state == 'n':
-            return 'no', 0
-        else:
-            print("输入有误，注意出药数量准确输入 y，否则输入 n")
-
-
-def take_medicine(row, line, num_push_out):
+def take_medicine(row, line, num_push_out, mode=3):
     """
     实现去到指定柜桶取出指定数量的药丸
 
@@ -292,6 +549,10 @@ def take_medicine(row, line, num_push_out):
         例如：4行5列，key = "3-4"
     num_push_out
         需要取出的药丸数量
+    mode
+        模式，SLIP_BUFFER的角度根据瓶内药的数量分为3个级别。
+        数量越多，药越满，角度越小。
+        SLIP_BUFFER[0]角度最小，[2]最大
 
     Returns
     -------
@@ -303,7 +564,7 @@ def take_medicine(row, line, num_push_out):
         "ready_state_error", ready_state -
         准备状态变量ready_stare非“yes”或者“no”。
     """
-    sleep_time = 1  # 动作运动间隔的时间
+    sleep_time = 0.1  # 动作运动间隔的时间
 
     # 0、去到对应柜桶前处于准备状态
     turn_ready(row, line)
@@ -313,17 +574,26 @@ def take_medicine(row, line, num_push_out):
     count_push_out_check = 0                    # 记录出药循环次数
     num_push_out_succeed = 0                    # 记录成功出药个数
     # 2、 旋转到检查点
-    turn_to(TAKE_MEDICINE_ANGLE_PUSH_OUT)
+    turn_to_ready_check(mode)
+    # 2.1、创建药瓶识别相机实例
+    video_bottle = camera.Video(camera.DEVICE_NAME_BOTTLE)
+    video_bottle.set_parm(focus_absolute=camera.FOCUS_ABSOLUTE_BOTTLE,
+                          exposure_absolute=camera.EXPOSURE_ABSOLUTE_BOTTLE)
     
     # 3、进入摇药或出药循环
     while True:
         # 判断是否有药准备出
-        ready_state = push_out_ready_check()
+        time.sleep(sleep_time)
+        ready_state = push_out_ready_check(video_bottle)
+        time.sleep(sleep_time)
         
         # 3.1 如果没有药准备好，进入摇药循环
         if ready_state == "no":
             # 循环次数处理
             count_back_check += 1           # 摇药循环+1
+            print("\n###########")
+            print(count_back_check)
+            print("\n##########")
             count_push_out_check = 0        # 出药循环置零
             # 判断检查次数是否超出最大值
             if count_back_check >= COUNT_CHECK_MAX:
@@ -332,8 +602,14 @@ def take_medicine(row, line, num_push_out):
                 return "fail", num_push_out_succeed
             elif 0 <= count_back_check < COUNT_CHECK_MAX:
                 # 未超出次数，执行摇药动作
-                turn_to(BACK_MEDICINE_ANGLE)                # 旋转到回到的位置
-                turn_to(TAKE_MEDICINE_ANGLE_PUSH_OUT)       # 旋转到检查点
+                turn_to(BACK_MEDICINE_ANGLE)                # 旋转到回药的位置
+                print("\n")
+                print("\n")
+                print(count_back_check)
+                print("\n")
+                print("\n")
+                time.sleep(0.5)
+                turn_to_ready_check(mode)                   # 旋转到检查点
                 continue                                    # 下一个循环
             else:
                 print("判断检查次数count_check计算错误超出范围。")
@@ -344,20 +620,19 @@ def take_medicine(row, line, num_push_out):
         elif ready_state == "yes":
             # 循环次数处理
             count_back_check = 0  # 摇药循环置零
-            # 根据 接收到的颗粒数 - 成功出药数 循环执行出药动作
-            for i in range(num_push_out - num_push_out_succeed):
-                push_out()
-            # 判断出药数量是否正确
-            finish_state, num_medicine = push_out_finish_check()        # 接受状态和识别到的数量
+            # 进行出药动作，并接受出药状态
+            ready_state = push_out()
+            time.sleep(sleep_time)
+
             # 根据出药情况重置循环次数
             # 遇到成功出药就重置出药循环
-            if finish_state == "yes":
+            if ready_state == "succeed":
                 count_push_out_check = 0            # 出药循环次数置零
+                num_push_out_succeed += 1           # 成功出药数+1
             # 出药检测不出药出药循环+1
             else:
                 count_push_out_check += 1            # 出药循环次数+1
-            num_push_out_succeed += num_medicine                      # 根据识别数量加到成功总数上
-            
+
             # 判断1、成功出药数量符合指定数量
             if num_push_out_succeed == num_push_out:
                 # 回到90度并返回成功
@@ -443,36 +718,43 @@ def turn_ready(row, line):
     # 2.1 取药夹打开到最大宽度，68
     go.only_x1(68)
     time.sleep(sleep_time)
-    # 2.2 y1轴，夹具前表面缩进相距 药板支撑平台y向前表面 -60的位置
+    # 2.2 y1轴，夹具前表面缩进相距 药板支撑平台y向前表面 -65的位置
     y1_now1 = coordinate_converter.body_tong("the_front_y")
-    y1_target1 = coordinate_converter.body("the_front_supporting_parts") - 60
+    y1_target1 = coordinate_converter.body("the_front_supporting_parts") - 65
     go.only_y1(y1_now1, y1_target1)
     time.sleep(sleep_time)
 
     # xz平面运动前提是y方向不会碰撞
-    go.xz_move_y_safe()
-    time.sleep(sleep_time)
+    # 使用了go.xz，因此可以不需要了
+    # go.xz_move_y_safe()
+    # time.sleep(sleep_time)
 
     # 3、Z轴抬高至推杆前推完成可以使得转动装置水平状态的位置
+    # 4、推杆中心线对其转动装置传动位中心线
+
     # 3.1 获取当前推杆上表面坐标
     the_top_body_push_rod = coordinate_converter.body_push_rod("the_top")
     # 3.2 获取转动装置呈水平状态时，与推杆上表面的接触面坐标
     # 需要加上误差修正参数
     z_target1 = ark_barrels_xyz[2] + params_correction_xyz[2]
-    # 3.3 执行运动控制
-    go.only_z(the_top_body_push_rod, z_target1)
-    # 3.4 更新ready_point
-    ready_point[2] = z_target1
-    time.sleep(sleep_time)
-
-    # 4、推杆中心线对其转动装置传动位中心线
     # 4.1 获取当前推杆中心线坐标
     center_body_push_rod = coordinate_converter.body_push_rod("center")
     # 4.2 获取传动装置x方向中心线坐标
     # 需要加上误差修正参数
     x_target1 = ark_barrels_xyz[0] + params_correction_xyz[0]
+
+    # 3.3 执行运动控制
+    # go.only_z(the_top_body_push_rod, z_target1)
     # 4.3 执行x轴运动指令
-    go.only_x(center_body_push_rod, x_target1)
+    # go.only_x(center_body_push_rod, x_target1)
+    go.xz(coordinate_now_x=center_body_push_rod,
+          coordinate_target_x=x_target1,
+          coordinate_now_z=the_top_body_push_rod,
+          coordinate_target_z=z_target1)
+
+    # 3.4 更新ready_point
+    ready_point[2] = coordinate_converter.body_push_rod("the_top")
+    time.sleep(sleep_time)
     # 4.4 更新ready_point
     ready_point[0] = x_target1
     time.sleep(sleep_time)
@@ -486,7 +768,7 @@ def turn_ready(row, line):
     # 5.3 执行y轴的控制
     go.only_y(the_front_body_push_rod, y_target1)
     # 5.4 更新ready_point
-    ready_point[1] = y_target1
+    ready_point[1] = coordinate_converter.body_push_rod("the_front")
     time.sleep(0.1)
 
     # 6、更新目前角度
@@ -566,27 +848,69 @@ def setup():
     if not y1_setup_return:
         print('Y1轴初始化失败')
 
+    push_drug_setup_return = push.setup()
+    if not push_drug_setup_return:
+        print('推药继电器初始化失败')
+        return False
+
     return True
 
 
 # 循环部分
 def main():
-    turn_ready(0, 0)
-    time.sleep(1)
+    # ========= 测试hsv识别
+    img = cv2.imread("/home/pi/Documents/yunxun/pywork143/image/picture/video0/push_out_ready_check_cut.jpg")
+    result = hsv_img(img,"/home/pi/Documents/yunxun/pywork143/image/picture/video0",debug=True)
+
+    # t1 = wiringpi.micros()
+    # t1 = wiringpi.micros()
+    # video_bottle = camera.Video("video0")
+    # video_bottle.set_parm(focus_absolute=camera.FOCUS_ABSOLUTE_BOTTLE,
+    #                       exposure_absolute=camera.EXPOSURE_ABSOLUTE_BOTTLE)
+    # result = push_out_ready_check(video_bottle)
+    # t2 = wiringpi.micros()
+    # print("总时间是%s" % (t2 - t1))
+    # print(result)
+    # photo_time()
+
+    # # 2.1 摇药
+    # sleep_time = 0
+    # i = 0
+    # succeed_count = 0
+    # sum = 200
+    # count = 68
+    # while i < 1:
+    #     i += 1
+    #     buffer_mode = int(2 - (count // ((sum + 3)//3)))
+    #     state, num = take_medicine(0, 1, 6, mode=buffer_mode)
+    #     time.sleep(sleep_time)
+    #     if state is "succeed":
+    #         succeed_count += 1
+    #         count -= 1
+    #     print("\n")
+    #     print("###########")
+    #     print(buffer_mode, count)
+    #     print("目前成功次数为%s，总次数为%s" % (succeed_count, i))
+    #     print("###########\n")
+
+    # camera_0.take_photo(picture_name="push_out_ready_check_focus",
+    #                     focus_absolute=camera_0.FOCUS_ABSOLUTE_BOTTLE)
+    # turn_ready(0, 0)
+    # time.sleep(1)
     """
     state, num = take_medicine(5)
     print(state)
     print(num)
     """
-    while True:
-        # turn_to(-55)
-        # time.sleep(1)
-
-        turn_to(-65)
-        time.sleep(1)
-
-        turn_to(60)
-        time.sleep(1)
+    # while True:
+    #     # turn_to(-55)
+    #     # time.sleep(1)
+    #
+    #     turn_to(-65)
+    #     time.sleep(1)
+    #
+    #     turn_to(60)
+    #     time.sleep(1)
 
 
 # 结束释放

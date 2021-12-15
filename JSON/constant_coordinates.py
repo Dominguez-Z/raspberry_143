@@ -10,35 +10,6 @@
 ##########################################################################################################
 """
 该模块主要用于获取constant_coordinates.json 文件中的数据
-constant_coordinates.json 文件中的数据说明如下：
-
-Parameters
-----------
-motor
-    waiting_point
-    ready_check_point
-    begin_check
-strike_drug_parts
-    1
-    center
-    the_top
-    the_back
-    2
-    center
-    the_top
-    the_back
-    3
-    center
-    the_top
-    the_back
-plate
-    ready_point
-
-Returns
--------
-
-Raises
-------
 
 """
 
@@ -57,17 +28,17 @@ def get(key1=None, key2=None, key3=None):
     """
     获取constant_coordinates.json 文件中的数据
     constant_coordinates.json 文件中的数据说明如下：
-    Parameters
-    ----------
-    motor
-        waiting_point
-        ready_check_point
-        begin_check
-    strike_drug_parts
-        1
-        center
-        the_top
-        the_back
+
+    motor：纯xyz三轴坐标的相关数据
+        waiting_point：等待点坐标，xyz
+        ready_check_point：运行中复位准备点坐标，xyz
+        begin_check：零点复位更新的坐标值，xyz
+    xz_move_y_safe：xz面运动的前提是，主体y方向最前端在safe值之后，避免撞到前面板的机械
+    strike_drug_parts：打药结构
+        1：一号打药装置
+        center：打药孔面的中心坐标，空间坐标xyz
+        the_top：打药装置z方向最高位置的坐标，避免撞到
+        the_back：打药装置y方向最后位置的坐标，控制主体运动注意最前面的结构要在这之后
         2
         center
         the_top
@@ -76,15 +47,22 @@ def get(key1=None, key2=None, key3=None):
         center
         the_top
         the_back
-    plate
-        ready_point
+    plate：药板相关空间坐标
+        ready_point：打药准备点坐标，xyz
+
+    Parameters
+    ----------
+    key1
+        键值1
+    key2
+        键值2
+    key3
+        键值3
 
     Returns
     -------
-
-    Raises
-    ------
-
+    int/[int]
+        获取的数值
     """
     f = open(constant_coordinates_file_path)                            # 打开位置坐标文件
     constant_coordinates_all = json.load(f)                             # 加载文件中所用内容

@@ -1,14 +1,25 @@
 {
+  "?motor":"纯xyz三轴坐标的相关数据",
   "motor":{
+    "?waiting_point":"等待点坐标，xyz",
     "waiting_point":[440.25,93,181.5],
+	"?ready_check_point":"运行中复位准备点坐标，xyz",
 	"ready_check_point":[194.1,98.5,227.5],
+	"?begin_check":"零点复位更新的坐标值，xyz",
 	"begin_check":[1097.1,87.8,52.3]
   },
+  "?xz_move_y_safe":"xz面运动的前提是，主体y方向最前端在safe值之后，避免撞到前面板的机械",
   "xz_move_y_safe":485,
+
+  "?strike_drug_parts":"打药结构",
   "strike_drug_parts":{
+    "0":"打药装置的编号",
     "1":{
+      "?center":"打药孔面的中心坐标，空间坐标xyz",
       "center":[205,470,250.62],
+      "?the_top":"打药装置z方向最高位置的坐标，避免撞到",
       "the_top":377.5,
+      "?the_back":"打药装置y方向最后位置的坐标，控制主体运动注意最前面的结构要在这之后",
       "the_back":451
     },
     "2":{
@@ -22,7 +33,10 @@
       "the_back":100
     }
   },
+
+  "?plate":"药板相关空间坐标",
   "plate":{
+    "?ready_point":"打药准备点坐标，xyz",
     "ready_point":[268.75, 557, 307.6]
   }
 
